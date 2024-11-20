@@ -1,6 +1,6 @@
-import { LoadingOutlined } from '@ant-design/icons';
-import { Flex } from 'antd';
-import React from 'react';
+import { LoadingOutlined } from "@ant-design/icons";
+import { Flex } from "antd";
+import React from "react";
 
 const Loading = () => {
   return (

@@ -17,7 +17,6 @@
 html,
 body {
   width: 100vw;
-  height: 100vh;
   overflow-x: hidden;
   background: #f6f6f6;
 }
@@ -35,8 +34,10 @@ h2,
 h3,
 h4,
 h5,
-h6,p {
+h6,
+p {
   color: #242424;
+  font-weight: 500;
 }
 
 ul,

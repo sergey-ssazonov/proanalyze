@@ -1,19 +1,19 @@
-import type { Metadata } from 'next';
-import '@/src/shared/styles/globals.scss';
-import { Inter } from 'next/font/google';
-import { AntdRegistry } from '@ant-design/nextjs-registry';
-import ConfigProviderAntd from '@/src/shared/antd/config.provider';
-import { Layout } from '@/src/shared/components/layout';
+import type { Metadata } from "next";
+import "@/src/shared/styles/globals.scss";
+import { Inter } from "next/font/google";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import ConfigProviderAntd from "@/src/shared/antd/config.provider";
+import { Layout } from "@/src/shared/components/layout";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: 'Проанализы',
+  title: "Проанализы",
   description:
-    'Сервис по подготовке перечня необходимых анализов c быстрым подборо и рекомендациями',
+    "Сервис по подготовке перечня необходимых анализов c быстрым подборо и рекомендациями",
 };
 
 export default function RootLayout({

@@ -1,1 +1,1 @@
-export { default as PreviewSection } from './ui/PreviewSection'
+export { default as PreviewSection } from "./ui/PreviewSection";

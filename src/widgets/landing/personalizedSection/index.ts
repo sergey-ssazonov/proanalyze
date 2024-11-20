@@ -1,1 +1,1 @@
-export {default as PersonalizedSection} from './ui/PersonalizedSection'
+export { default as PersonalizedSection } from "./ui/PersonalizedSection";
