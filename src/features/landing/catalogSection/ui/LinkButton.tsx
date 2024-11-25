@@ -15,7 +15,6 @@ const LinkButton: FC<ILinkButtonProps> = ({ toUrl }) => {
     <span className="absolute right-4 top-4 z-10">
       <Button
         icon={<ArrowRightOutlined style={{ transform: "rotate(-45deg)" }} />}
-        size="large"
         shape="circle"
         onClick={() => router.push(toUrl)}
       />

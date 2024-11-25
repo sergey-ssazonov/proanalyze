@@ -1,5 +1,5 @@
-import { Header } from "@/src/widgets/header";
-import React, { FC } from "react";
+import { Header } from '@/src/features/header';
+import React, { FC } from 'react';
 
 interface ILayoutProps {
   children: React.ReactNode;

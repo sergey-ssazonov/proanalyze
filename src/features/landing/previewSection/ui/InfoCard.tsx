@@ -1,6 +1,6 @@
-import { Flex } from "antd";
-import Image from "next/image";
-import React, { FC } from "react";
+import { Flex } from 'antd';
+import Image from 'next/image';
+import React, { FC } from 'react';
 
 interface IInfoCardProps {
   iconUrl: string;
@@ -20,8 +20,9 @@ const InfoCard: FC<IInfoCardProps> = ({ iconUrl, text, className }) => {
           src={iconUrl}
           width={25}
           height={25}
-          objectFit="cover"
           alt={text}
+          priority={true}
+          className="object-cover h-auto w-auto"
         />
       </Flex>
 

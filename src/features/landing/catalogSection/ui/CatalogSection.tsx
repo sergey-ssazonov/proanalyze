@@ -1,15 +1,15 @@
-import { Col, Flex, Row } from "antd";
-import React, { FC } from "react";
-import CardProduct from "./CardProduct";
-import { IProduct } from "@/src/shared/interfaces/product.interface";
+import { Col, Flex, Row } from 'antd';
+import React, { FC } from 'react';
+import CardProduct from './CardProduct';
+import { IProduct } from '@/src/features/landing/catalogSection/interfaces/product.interface';
 
-import Product1Image from "@/public/images/product1-image.png";
+import Product1Image from '@/public/images/product1-image.png';
 
 const mockProduct: IProduct = {
   imageUrl: Product1Image.src,
-  toUrl: "https://proanalizy.ru/",
-  type: "Беременность",
-  title: "Подготовиться к беременности",
+  toUrl: 'https://proanalizy.ru/',
+  type: 'Беременность',
+  title: 'Подготовиться к беременности',
   price: 5000,
 };
 
@@ -22,7 +22,7 @@ const CatalogSection: FC = () => {
           Узнайте, какие именно анализы помогут вам
         </h3>
       </Flex>
-      <Row className="w-full h-vh80" gutter={[16, 16]} justify="center">
+      <Row className="w-full" gutter={[16, 16]} justify="center">
         <Col xs={24} sm={12} lg={8}>
           <CardProduct {...mockProduct} />
         </Col>

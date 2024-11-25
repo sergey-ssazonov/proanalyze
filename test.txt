@@ -1,0 +1,21 @@
+    =IF(B2=$P$2;VLOOKUP(A2;'1.Головань'!$B$3:$N$32;3;FALSE);
+      IF(B2=$P$3;VLOOKUP(A2;'2.Жиляков'!$B$3:$N$32;3;FALSE);
+       IF(B2=$P$4;VLOOKUP(A2;'3.Попков'!$B$3:$N$32;3;FALSE);
+  IF(B2=$P$5;VLOOKUP(A2;'4.Белоглазова'!$B$3:$N$32;3;FALSE);
+    IF(B2=$P$6;VLOOKUP(A2;'5.Пчелинцев'!$B$3:$N$32;3;FALSE);
+      IF(B2=$P$7;VLOOKUP(A2;'6.Симонов'!$B$3:$N$32;3;FALSE);
+     IF(B2=$P$8;VLOOKUP(A2;'7.Замураев'!$B$3:$N$32;3;FALSE);
+     IF(B2=$P$9;VLOOKUP(A2;'8.Васильев'!$B$3:$N$32;3;FALSE);
+      IF(B2=$P$10;VLOOKUP(A2;'9.Пытель'!$B$3:$N$32;3;FALSE);
+    IF(B2=$P$11;VLOOKUP(A2;'10.Дьякова'!$B$3:$N$32;3;FALSE);
+    IF(B2=$P$12;VLOOKUP(A2;'11.Мелихов'!$B$3:$N$32;3;FALSE);
+     IF(B2=$P$13;VLOOKUP(A2;'12.Якунин'!$B$3:$N$32;3;FALSE);
+   IF(B2=$P$14;VLOOKUP(A2;'13.Ванданов'!$B$3:$N$32;3;FALSE);
+     IF(B2=$P$15;VLOOKUP(A2;'14.Аминов'!$B$3:$N$32;3;FALSE);
+IF(B2=$P$16;VLOOKUP(A2;'15.Лобановский'!$B$3:$N$32;3;FALSE);
+IF(B2=$P$17;VLOOKUP(A2;'16.Федотовских'!$B$3:$N$32;3;FALSE);
+ IF(B2=$P$18;VLOOKUP(A2;'17.Землянский'!$B$3:$N$32;3;FALSE);
+   IF(B2=$P$19;VLOOKUP(A2;'18.Пирожков'!$B$3:$N$32;3;FALSE);
+      IF(B2=$P$20;VLOOKUP(A2;'19.Серов'!$B$3:$N$32;3;FALSE);
+    IF(B2=$P$21;VLOOKUP(A2;'20.Чугунов'!$B$3:$N$32;3;FALSE);
+0))))))))))))))))))))

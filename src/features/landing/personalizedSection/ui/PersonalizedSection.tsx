@@ -1,5 +1,6 @@
-import { Flex, Form } from "antd";
-import React, { FC } from "react";
+import { Flex } from 'antd';
+import React, { FC } from 'react';
+import FormPersonalized from './FormPersonalised';
 
 const PersonalizedSection: FC = () => {
   return (
@@ -10,7 +11,7 @@ const PersonalizedSection: FC = () => {
           Только ключевые показатели, без лишних назначений
         </h3>
       </Flex>
-      <Form className="w-full h-vh80 bg-white  rounded-3xl"></Form>
+      <FormPersonalized />
     </section>
   );
 };

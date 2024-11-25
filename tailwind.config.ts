@@ -9,6 +9,7 @@ export default {
         primaryBlue: "#2976EC",
         primaryGray: "#F5F5F5",
         black: "#242424",
+        grayText: "#474747"
       },
       height: {
         vh80: "80vh",

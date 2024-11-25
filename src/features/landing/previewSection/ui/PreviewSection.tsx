@@ -1,11 +1,11 @@
-import { Button, Flex } from "antd";
-import Image from "next/image";
-import React, { FC } from "react";
-import PreviewImage from "@/public/images/preview-image.png";
-import FlaskIcon from "@/public/icons/flask-icon.svg";
-import HeardIcon from "@/public/icons/heard-icon.svg";
-import InfoCard from "./InfoCard";
-import { TagSpan } from "@/src/shared/components/tagSpan";
+import { Button, Flex } from 'antd';
+import Image from 'next/image';
+import React, { FC } from 'react';
+import PreviewImage from '@/public/images/preview-image.png';
+import FlaskIcon from '@/public/icons/flask-icon.svg';
+import HeardIcon from '@/public/icons/heard-icon.svg';
+import InfoCard from './InfoCard';
+import { TagSpan } from '@/src/shared/components/tagSpan';
 
 const PreviewSection: FC = () => {
   return (
@@ -17,7 +17,7 @@ const PreviewSection: FC = () => {
           <h3 className="text-2xl">
             Сервис по подготовке перечня необходимых анализов
           </h3>
-          <Button className="w-fit" type="primary" shape="round" size="large">
+          <Button className="max-w-56" type="primary" shape="round" size="large" >
             Список анализов
           </Button>
         </Flex>
@@ -34,15 +34,15 @@ const PreviewSection: FC = () => {
           />
         </div>
       </Flex>
-      <div className="w-1/2  relative">
-        <Image
-          src={PreviewImage.src}
-          fill
-          objectFit="cover"
-          alt="Рука складывает пробирки"
-          className="rounded-3xl"
-        />
-      </div>
+      <Image
+        src={PreviewImage.src}
+        width={2000}
+        height={2500}
+        alt="Рука складывает пробирки"
+        className="rounded-3xl object-cover w-1/2 h-auto"
+        priority={true}
+        loading="eager"
+      />
     </section>
   );
 };

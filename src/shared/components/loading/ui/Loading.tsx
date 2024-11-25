@@ -6,7 +6,7 @@ const Loading = () => {
   return (
     <Flex className="h-screen " align="center" justify="center">
       {/* <Spin size="large" /> */}
-      <LoadingOutlined spin />
+      <LoadingOutlined spin size={60}/>
     </Flex>
   );
 };

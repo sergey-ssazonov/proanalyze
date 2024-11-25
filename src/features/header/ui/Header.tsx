@@ -32,7 +32,7 @@ const Header: FC = () => {
           ))}
         </ul>
       </nav>
-      <Button shape="circle" size="large" icon={<ShoppingCartOutlined />} />
+      <Button shape="circle" icon={<ShoppingCartOutlined />} />
     </header>
   );
 };
