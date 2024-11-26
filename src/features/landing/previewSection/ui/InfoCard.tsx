@@ -1,6 +1,6 @@
-import { Flex } from 'antd';
-import Image from 'next/image';
-import React, { FC } from 'react';
+import { Flex } from "antd";
+import Image from "next/image";
+import React, { FC } from "react";
 
 interface IInfoCardProps {
   iconUrl: string;

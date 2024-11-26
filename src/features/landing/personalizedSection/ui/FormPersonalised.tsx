@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { Button, Col, Flex, Form, Progress, Row, Select } from 'antd';
-import React from 'react';
+import { Button, Col, Flex, Form, Progress, Row, Select } from "antd";
+import React from "react";
 import {
   selectAgeOptions,
   selectDoctorOptions,
   selectGenderOptions,
-} from '../data/Form.data';
-import { usePersonalizedModel } from '../model/PersonalizedModel';
+} from "../data/Form.data";
+import { usePersonalizedModel } from "../model/PersonalizedModel";
 
 const FormPersonalized = () => {
   const { form, isFemale, handleValuesChange, formProgress } =
@@ -60,7 +60,7 @@ const FormPersonalized = () => {
                 placeholder="Ваш пол"
                 options={selectGenderOptions}
                 dropdownStyle={{
-                  borderRadius: '8px',
+                  borderRadius: "8px",
                 }}
                 className="w-full"
               />
@@ -74,7 +74,7 @@ const FormPersonalized = () => {
                 placeholder="Ваш возраст"
                 options={selectAgeOptions}
                 dropdownStyle={{
-                  borderRadius: '8px',
+                  borderRadius: "8px",
                 }}
                 className="w-full"
               />
@@ -88,7 +88,7 @@ const FormPersonalized = () => {
                 placeholder="К какому врачу планируете визит?"
                 options={selectDoctorOptions}
                 dropdownStyle={{
-                  borderRadius: '8px',
+                  borderRadius: "8px",
                 }}
                 className="w-full"
               />
@@ -104,7 +104,7 @@ const FormPersonalized = () => {
                   placeholder="Последний день менструации"
                   options={selectDoctorOptions}
                   dropdownStyle={{
-                    borderRadius: '8px',
+                    borderRadius: "8px",
                   }}
                   className="w-full"
                 />

@@ -17,7 +17,12 @@ const PreviewSection: FC = () => {
           <h3 className="text-2xl">
             Сервис по подготовке перечня необходимых анализов
           </h3>
-          <Button className="max-w-56" type="primary" shape="round" size="large" >
+          <Button
+            className="max-w-56"
+            type="primary"
+            shape="round"
+            size="large"
+          >
             Список анализов
           </Button>
         </Flex>

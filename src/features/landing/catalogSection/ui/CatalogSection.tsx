@@ -1,15 +1,15 @@
-import { Col, Flex, Row } from 'antd';
-import React, { FC } from 'react';
-import CardProduct from './CardProduct';
-import { IProduct } from '@/src/features/landing/catalogSection/interfaces/product.interface';
+import { Col, Flex, Row } from "antd";
+import React, { FC } from "react";
+import CardProduct from "./CardProduct";
+import { IProduct } from "@/src/features/landing/catalogSection/interfaces/product.interface";
 
-import Product1Image from '@/public/images/product1-image.png';
+import Product1Image from "@/public/images/product1-image.png";
 
 const mockProduct: IProduct = {
   imageUrl: Product1Image.src,
-  toUrl: 'https://proanalizy.ru/',
-  type: 'Беременность',
-  title: 'Подготовиться к беременности',
+  toUrl: "https://proanalizy.ru/",
+  type: "Беременность",
+  title: "Подготовиться к беременности",
   price: 5000,
 };
 

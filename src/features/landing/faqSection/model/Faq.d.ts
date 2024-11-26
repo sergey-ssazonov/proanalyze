@@ -1,4 +1,4 @@
 export interface ICollapsePanel {
-    title: string;
-    children: string;
-  }
+  title: string;
+  children: string;
+}

@@ -1,6 +1,6 @@
-import { Flex } from 'antd';
-import React, { FC } from 'react';
-import FormPersonalized from './FormPersonalised';
+import { Flex } from "antd";
+import React, { FC } from "react";
+import FormPersonalized from "./FormPersonalised";
 
 const PersonalizedSection: FC = () => {
   return (

@@ -1,8 +1,8 @@
-import axiosInstance from '@/src/shared/lib/axios';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import axiosInstance from "@/src/shared/lib/axios";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const submitForm = async () => {
-  const response = await axiosInstance.post('/posts');
+  const response = await axiosInstance.post("/posts");
   return response.data;
 };
 
@@ -11,7 +11,7 @@ export const useFormSubmit = () => {
   return useMutation({
     mutationFn: submitForm,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['todos'] });
+      queryClient.invalidateQueries({ queryKey: ["todos"] });
     },
   });
 };

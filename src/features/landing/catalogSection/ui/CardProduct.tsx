@@ -1,10 +1,10 @@
-import { Button, ConfigProvider, Flex } from 'antd';
-import Image from 'next/image';
-import React, { FC } from 'react';
-import LinkButton from './LinkButton';
-import { TagSpan } from '@/src/shared/components/tagSpan';
-import { IProduct } from '@/src/features/landing/catalogSection/interfaces/product.interface';
-import { secondaryThemeAntd } from '@/src/shared/antd/theme';
+import { Button, ConfigProvider, Flex } from "antd";
+import Image from "next/image";
+import React, { FC } from "react";
+import LinkButton from "./LinkButton";
+import { TagSpan } from "@/src/shared/components/tagSpan";
+import { IProduct } from "@/src/features/landing/catalogSection/interfaces/product.interface";
+import { secondaryThemeAntd } from "@/src/shared/antd/theme";
 
 interface ICardProductProps extends IProduct {}
 
