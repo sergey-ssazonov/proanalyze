@@ -11,7 +11,7 @@ const Layout: FC<ILayoutProps> = ({ children }) => {
     <body className="px-10 pt-4 pb-20">
       <Header />
       <main>{children}</main>
-      <Footer/>
+      <Footer />
     </body>
   );
 };

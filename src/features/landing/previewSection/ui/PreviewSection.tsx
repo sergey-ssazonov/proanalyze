@@ -1,11 +1,11 @@
-import { Button, Flex } from 'antd';
-import Image from 'next/image';
-import React, { FC } from 'react';
-import PreviewImage from '@/public/images/preview-image.png';
-import FlaskIcon from '@/public/icons/flask-icon.svg';
-import HeardIcon from '@/public/icons/heard-icon.svg';
-import InfoCard from './InfoCard';
-import { TagSpan } from '@/src/shared/components/tagSpan';
+import { Button, Flex } from "antd";
+import Image from "next/image";
+import React, { FC } from "react";
+import PreviewImage from "@/public/images/preview-image.png";
+import FlaskIcon from "@/public/icons/flask-icon.svg";
+import HeardIcon from "@/public/icons/heard-icon.svg";
+import InfoCard from "./InfoCard";
+import { TagSpan } from "@/src/shared/components/tagSpan";
 
 const PreviewSection: FC = () => {
   return (

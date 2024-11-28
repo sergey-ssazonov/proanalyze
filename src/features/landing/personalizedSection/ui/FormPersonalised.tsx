@@ -1,17 +1,25 @@
-"use client";
+'use client';
 
-import { Button, Col, Flex, Form, Progress, Row, Select } from "antd";
-import React from "react";
+import { Button, Col, Flex, Form, Progress, Row, Select } from 'antd';
+import React from 'react';
 import {
   selectAgeOptions,
   selectDoctorOptions,
   selectGenderOptions,
-} from "../data/Form.data";
-import { usePersonalizedModel } from "../model/PersonalizedModel";
+  selectMensesOptions,
+} from '../data/Form.data';
+import { usePersonalizedModel } from '../model/PersonalizedModel';
 
 const FormPersonalized = () => {
-  const { form, isFemale, handleValuesChange, formProgress } =
-    usePersonalizedModel();
+  const {
+    form,
+    isFemale,
+    handleValuesChange,
+    nextStep,
+    formProgress,
+    handleResetForm,
+    isFormEmpty,
+  } = usePersonalizedModel();
 
   return (
     <Form
@@ -24,71 +32,81 @@ const FormPersonalized = () => {
       <Flex vertical align="center" className="w-2/3">
         <h3 className="text-3xl mb-14 font-medium">Введите данные</h3>
 
-        <div className="w-full mb-10">
+        <div className="w-full mb-5">
           <span className="text-xl ">Заполнено</span>
           <Progress percent={formProgress} />
-          <span className="text-xl  ">
-            Укажите пол
-            {/* {formProgress < 25
-            ? 'Укажите пол'
-            : formProgress !== 100
-              ? `${stepProgress}-й шаг из 3`
-              : ''} */}
-          </span>
         </div>
 
-        {/* <Flex justify="end" className="mb-2 w-full">
-        {!formIsEmpty ? (
+        <Flex justify="space-between" className="mb-5 w-full">
+          <span className="text-lg block mt-2">
+            {formProgress >= 100
+              ? 'Форма заполнена, нажмите "Получить перечень"'
+              : nextStep}
+          </span>
           <Button
-            disabled={loader}
             size="small"
             type="text"
             onClick={handleResetForm}
+            style={{ visibility: isFormEmpty ? 'hidden' : 'visible' }}
           >
             Очистить форму
           </Button>
-        ) : (
-          <div className="h-6" />
-        )}
-      </Flex> */}
+        </Flex>
         <Row className="h-auto w-full" gutter={[16, 16]}>
           <Col span={12} className="">
-            <Form.Item name="gender" noStyle>
+            <Form.Item
+              name="gender"
+              rules={[{ required: true, message: 'Укажите ваш пол' }]}
+              noStyle
+            >
               <Select
                 size="large"
                 virtual={false}
                 placeholder="Ваш пол"
                 options={selectGenderOptions}
                 dropdownStyle={{
-                  borderRadius: "8px",
+                  borderRadius: '8px',
                 }}
                 className="w-full"
               />
             </Form.Item>
           </Col>
           <Col span={12}>
-            <Form.Item name="age" noStyle>
+            <Form.Item
+              name="age"
+              rules={[{ required: true, message: 'Укажите ваш возраст' }]}
+              noStyle
+            >
               <Select
                 size="large"
                 virtual={false}
                 placeholder="Ваш возраст"
                 options={selectAgeOptions}
                 dropdownStyle={{
-                  borderRadius: "8px",
+                  borderRadius: '8px',
                 }}
                 className="w-full"
               />
             </Form.Item>
           </Col>
           <Col span={12}>
-            <Form.Item name="doctor" noStyle>
+            <Form.Item
+              name="doctor"
+              rules={[
+                {
+                  required: true,
+                  message: 'Укажите к какому врачу планируете визит',
+                },
+              ]}
+              noStyle
+            >
               <Select
                 size="large"
                 virtual={false}
                 placeholder="К какому врачу планируете визит?"
                 options={selectDoctorOptions}
                 dropdownStyle={{
-                  borderRadius: "8px",
+                  borderRadius: '8px',
                 }}
                 className="w-full"
               />
@@ -97,14 +115,23 @@ const FormPersonalized = () => {
 
           {isFemale && (
             <Col span={12}>
-              <Form.Item name="menses_day" noStyle>
+              <Form.Item
+                name="menses_day"
+                rules={[
+                  {
+                    required: true,
+                    message: 'Укажите последний день менструации',
+                  },
+                ]}
+                noStyle
+              >
                 <Select
                   size="large"
                   virtual={false}
                   placeholder="Последний день менструации"
-                  options={selectDoctorOptions}
+                  options={selectMensesOptions}
                   dropdownStyle={{
-                    borderRadius: "8px",
+                    borderRadius: '8px',
                   }}
                   className="w-full"
                 />
@@ -112,14 +139,17 @@ const FormPersonalized = () => {
             </Col>
           )}
         </Row>
-        <Button
-          className="mt-6 w-fit"
-          type="primary"
-          size="large"
-          shape="round"
-        >
-          Получить перечень
-        </Button>
+        <Form.Item shouldUpdate noStyle>
+          <Button
+            className="mt-14 w-fit"
+            type="primary"
+            size="large"
+            shape="round"
+            htmlType="submit"
+          >
+            Получить перечень
+          </Button>
+        </Form.Item>
       </Flex>
     </Form>
   );

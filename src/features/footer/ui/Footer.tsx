@@ -1,7 +1,7 @@
-import { Logo } from '@/src/shared/components/logo';
-import { Button, Flex } from 'antd';
-import Link from 'next/link';
-import React from 'react';
+import { Logo } from "@/src/shared/components/logo";
+import { Flex } from "antd";
+import Link from "next/link";
+import React from "react";
 
 const Footer = () => {
   return (
@@ -26,7 +26,7 @@ const Footer = () => {
       <ul className="text-lg underline mb-5">
         <li>
           <Link
-            href={'/legal'}
+            href={"/legal"}
             className="duration-300 hover:opacity-60"
             target="_blank"
             rel="noopener noreferrer"
@@ -36,7 +36,7 @@ const Footer = () => {
         </li>
         <li>
           <Link
-            href={'/legal'}
+            href={"/legal"}
             className="duration-300 hover:opacity-60"
             target="_blank"
             rel="noopener noreferrer"
@@ -44,9 +44,9 @@ const Footer = () => {
             Пользовательское соглашение
           </Link>
         </li>
-        <li >
+        <li>
           <Link
-            href={'/legal'}
+            href={"/legal"}
             className="duration-300 hover:opacity-60"
             target="_blank"
             rel="noopener noreferrer"
@@ -57,7 +57,7 @@ const Footer = () => {
       </ul>
 
       <p className="mb-6 font-normal">
-        По всем вопросам:{' '}
+        По всем вопросам:{" "}
         <span className="underline">
           <Link
             href="mailto:support@proanalizy.ru"

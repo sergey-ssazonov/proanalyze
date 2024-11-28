@@ -4,3 +4,4 @@ export interface IPersonalizedData {
   doctor?: string | undefined;
   menses_day?: string | undefined;
 }
+
