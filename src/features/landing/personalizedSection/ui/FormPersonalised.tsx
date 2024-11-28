@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { Button, Col, Flex, Form, Progress, Row, Select } from 'antd';
-import React from 'react';
+import { Button, Col, Flex, Form, Progress, Row, Select } from "antd";
+import React from "react";
 import {
   selectAgeOptions,
   selectDoctorOptions,
   selectGenderOptions,
   selectMensesOptions,
-} from '../data/Form.data';
-import { usePersonalizedModel } from '../model/PersonalizedModel';
+} from "../data/Form.data";
+import { usePersonalizedModel } from "../model/PersonalizedModel";
 
 const FormPersonalized = () => {
   const {
@@ -47,17 +47,19 @@ const FormPersonalized = () => {
             size="small"
             type="text"
             onClick={handleResetForm}
-            style={{ visibility: isFormEmpty ? 'hidden' : 'visible' }}
+            style={{ visibility: isFormEmpty ? "hidden" : "visible" }}
           >
             Очистить форму
           </Button>
         </Flex>
-        <Row className="h-auto w-full" gutter={[16, 16]}>
+        <Row className="h-auto w-full" gutter={[16, 10]}>
           <Col span={12} className="">
             <Form.Item
               name="gender"
-              rules={[{ required: true, message: 'Укажите ваш пол' }]}
-              noStyle
+              rules={[{ required: true, message: "Укажите ваш пол" }]}
+              style={{
+                marginBottom: "0.5rem",
+              }}
             >
               <Select
                 size="large"
@@ -65,7 +67,7 @@ const FormPersonalized = () => {
                 placeholder="Ваш пол"
                 options={selectGenderOptions}
                 dropdownStyle={{
-                  borderRadius: '8px',
+                  borderRadius: "8px",
                 }}
                 className="w-full"
               />
@@ -74,8 +76,10 @@ const FormPersonalized = () => {
           <Col span={12}>
             <Form.Item
               name="age"
-              rules={[{ required: true, message: 'Укажите ваш возраст' }]}
-              noStyle
+              rules={[{ required: true, message: "Укажите ваш возраст" }]}
+              style={{
+                marginBottom: "0.5rem",
+              }}
             >
               <Select
                 size="large"
@@ -83,7 +87,7 @@ const FormPersonalized = () => {
                 placeholder="Ваш возраст"
                 options={selectAgeOptions}
                 dropdownStyle={{
-                  borderRadius: '8px',
+                  borderRadius: "8px",
                 }}
                 className="w-full"
               />
@@ -95,10 +99,12 @@ const FormPersonalized = () => {
               rules={[
                 {
                   required: true,
-                  message: 'Укажите к какому врачу планируете визит',
+                  message: "Укажите врача",
                 },
               ]}
-              noStyle
+              style={{
+                marginBottom: "0.5rem",
+              }}
             >
               <Select
                 size="large"
@@ -106,7 +112,7 @@ const FormPersonalized = () => {
                 placeholder="К какому врачу планируете визит?"
                 options={selectDoctorOptions}
                 dropdownStyle={{
-                  borderRadius: '8px',
+                  borderRadius: "8px",
                 }}
                 className="w-full"
               />
@@ -120,10 +126,12 @@ const FormPersonalized = () => {
                 rules={[
                   {
                     required: true,
-                    message: 'Укажите последний день менструации',
+                    message: "Укажите последний день менструации",
                   },
                 ]}
-                noStyle
+                style={{
+                  marginBottom: "0.5rem",
+                }}
               >
                 <Select
                   size="large"
@@ -131,7 +139,7 @@ const FormPersonalized = () => {
                   placeholder="Последний день менструации"
                   options={selectMensesOptions}
                   dropdownStyle={{
-                    borderRadius: '8px',
+                    borderRadius: "8px",
                   }}
                   className="w-full"
                 />
@@ -141,7 +149,7 @@ const FormPersonalized = () => {
         </Row>
         <Form.Item shouldUpdate noStyle>
           <Button
-            className="mt-14 w-fit"
+            className="mt-14 w-fit mb-4"
             type="primary"
             size="large"
             shape="round"
@@ -150,6 +158,7 @@ const FormPersonalized = () => {
             Получить перечень
           </Button>
         </Form.Item>
+        <h3 className="text-lightGray text-sm">Стоимость перечня анализов 150₽</h3>
       </Flex>
     </Form>
   );

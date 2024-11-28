@@ -8,6 +8,7 @@ export const themeAntd: ThemeConfig = {
     controlHeight: 40,
     controlHeightLG: 52,
     fontSize: 16,
+
   },
 
   components: {
@@ -22,8 +23,9 @@ export const themeAntd: ThemeConfig = {
       colorBgContainer: "#F6F6F6",
       colorBorder: "transperent",
       borderRadiusLG: 25,
+      fontSizeLG: 16,
 
-      // paddingLG: 16,
+      paddingLG: 16,
       // paddingBlockLG: 16,
       // paddingInlineLG: 16,
     },
