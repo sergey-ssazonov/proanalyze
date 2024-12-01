@@ -3,12 +3,12 @@ interface ISelectOption {
   value: string;
 }
 
-export const selectGenderOptions: ISelectOption[] = [
+export const GENDER_OPTIONS: ISelectOption[] = [
   { label: "Мужской", value: "male" },
   { label: "Женский", value: "female" },
 ];
 
-export const selectDoctorOptions: ISelectOption[] = [
+export const DOCTOR_OPTIONS: ISelectOption[] = [
   { label: "врач1", value: "doctor1" },
   { label: "врач2", value: "doctor2" },
   { label: "врач3", value: "doctor3" },
@@ -16,7 +16,7 @@ export const selectDoctorOptions: ISelectOption[] = [
   { label: "врач5", value: "doctor5" },
 ];
 
-export const selectMensesOptions: ISelectOption[] = [
+export const MENSES_OPTIONS: ISelectOption[] = [
   { label: "вариант1", value: "variant1" },
   { label: "вариант2", value: "variant2" },
   { label: "вариант3", value: "variant3" },
@@ -24,7 +24,7 @@ export const selectMensesOptions: ISelectOption[] = [
   { label: "вариант5", value: "variant5" },
 ];
 
-export const selectAgeOptions: ISelectOption[] = [
+export const AGE_OPTIONS: ISelectOption[] = [
   { value: "до 1 года", label: "до 1 года" },
   { value: "1", label: "1" },
   { value: "2", label: "2" },
@@ -127,3 +127,4 @@ export const selectAgeOptions: ISelectOption[] = [
   { value: "99", label: "99" },
   { value: "100", label: "100" },
 ];
+

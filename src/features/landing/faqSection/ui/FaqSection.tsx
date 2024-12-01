@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import FaqImage from "@/public/images/faq-image.png";
+import FaqImage from "@/public/images/landing/faq-image.png";
 import CollapseFaq from "./CollapseFaq";
 
 const FaqSection = () => {

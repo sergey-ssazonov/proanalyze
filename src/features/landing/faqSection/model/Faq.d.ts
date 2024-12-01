@@ -1,4 +1,6 @@
-export interface ICollapsePanel {
-  title: string;
-  children: string;
+ interface IFaqItem {
+  question: string;
+  answer: string;
 }
+
+export default IFaqItem

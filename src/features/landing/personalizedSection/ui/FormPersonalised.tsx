@@ -2,12 +2,7 @@
 
 import { Button, Col, Flex, Form, Progress, Row, Select } from "antd";
 import React from "react";
-import {
-  selectAgeOptions,
-  selectDoctorOptions,
-  selectGenderOptions,
-  selectMensesOptions,
-} from "../data/Form.data";
+import { AGE_OPTIONS, DOCTOR_OPTIONS, GENDER_OPTIONS, MENSES_OPTIONS } from "../data/Form.data";
 import { usePersonalizedModel } from "../model/PersonalizedModel";
 
 const FormPersonalized = () => {
@@ -26,22 +21,20 @@ const FormPersonalized = () => {
       layout="vertical"
       form={form}
       name="formPersonalized"
-      className="w-full h-vh80 bg-white  rounded-3xl flex flex-col justify-center items-center"
+      className="flex h-vh80 w-full flex-col items-center justify-center rounded-3xl bg-white"
       onValuesChange={handleValuesChange}
     >
       <Flex vertical align="center" className="w-2/3">
-        <h3 className="text-3xl mb-14 font-medium">Введите данные</h3>
+        <h3 className="mb-14 text-3xl font-medium">Введите данные</h3>
 
-        <div className="w-full mb-5">
-          <span className="text-xl ">Заполнено</span>
+        <div className="mb-5 w-full">
+          <span className="text-xl">Заполнено</span>
           <Progress percent={formProgress} />
         </div>
 
         <Flex justify="space-between" className="mb-5 w-full">
-          <span className="text-lg block mt-2">
-            {formProgress >= 100
-              ? 'Форма заполнена, нажмите "Получить перечень"'
-              : nextStep}
+          <span className="mt-2 block text-lg">
+            {formProgress >= 100 ? 'Форма заполнена, нажмите "Получить перечень"' : nextStep}
           </span>
           <Button
             size="small"
@@ -65,7 +58,7 @@ const FormPersonalized = () => {
                 size="large"
                 virtual={false}
                 placeholder="Ваш пол"
-                options={selectGenderOptions}
+                options={GENDER_OPTIONS}
                 dropdownStyle={{
                   borderRadius: "8px",
                 }}
@@ -85,7 +78,7 @@ const FormPersonalized = () => {
                 size="large"
                 virtual={false}
                 placeholder="Ваш возраст"
-                options={selectAgeOptions}
+                options={AGE_OPTIONS}
                 dropdownStyle={{
                   borderRadius: "8px",
                 }}
@@ -110,7 +103,7 @@ const FormPersonalized = () => {
                 size="large"
                 virtual={false}
                 placeholder="К какому врачу планируете визит?"
-                options={selectDoctorOptions}
+                options={DOCTOR_OPTIONS}
                 dropdownStyle={{
                   borderRadius: "8px",
                 }}
@@ -137,7 +130,7 @@ const FormPersonalized = () => {
                   size="large"
                   virtual={false}
                   placeholder="Последний день менструации"
-                  options={selectMensesOptions}
+                  options={MENSES_OPTIONS}
                   dropdownStyle={{
                     borderRadius: "8px",
                   }}
@@ -149,7 +142,7 @@ const FormPersonalized = () => {
         </Row>
         <Form.Item shouldUpdate noStyle>
           <Button
-            className="mt-14 w-fit mb-4"
+            className="mb-4 mt-14 w-fit"
             type="primary"
             size="large"
             shape="round"
@@ -158,10 +151,11 @@ const FormPersonalized = () => {
             Получить перечень
           </Button>
         </Form.Item>
-        <h3 className="text-lightGray text-sm">Стоимость перечня анализов 150₽</h3>
+        <h3 className="text-sm text-lightGray">Стоимость перечня анализов 150₽</h3>
       </Flex>
     </Form>
   );
 };
 
 export default FormPersonalized;
+

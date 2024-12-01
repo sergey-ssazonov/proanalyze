@@ -1,24 +1,26 @@
-import { ICollapsePanel } from "../model/Faq";
+import IFaqItem from "../model/Faq";
 
-export const FaqData: ICollapsePanel[] = [
+const FAQ_ITEMS: IFaqItem[] = [
   {
-    title: "вопрос 1?",
-    children: "ответ 1",
+    question: "вопрос 1?",
+    answer: "ответ 1",
   },
   {
-    title: "вопрос 1?",
-    children: "ответ 1",
+    question: "вопрос 1?",
+    answer: "ответ 1",
   },
   {
-    title: "вопрос 1?",
-    children: "ответ 1",
+    question: "вопрос 1?",
+    answer: "ответ 1",
   },
   {
-    title: "вопрос 1?",
-    children: "ответ 1",
+    question: "вопрос 1?",
+    answer: "ответ 1",
   },
   {
-    title: "вопрос 1?",
-    children: "ответ 1",
+    question: "вопрос 1?",
+    answer: "ответ 1",
   },
 ];
+
+export default FAQ_ITEMS

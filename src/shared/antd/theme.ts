@@ -8,7 +8,6 @@ export const themeAntd: ThemeConfig = {
     controlHeight: 40,
     controlHeightLG: 52,
     fontSize: 16,
-
   },
 
   components: {

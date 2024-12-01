@@ -1,7 +1,7 @@
 import { Button, Flex } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
-import PreviewImage from "@/public/images/preview-image.png";
+import PreviewImage from "@/public/images/landing/preview-image.png";
 import FlaskIcon from "@/public/icons/flask-icon.svg";
 import HeardIcon from "@/public/icons/heard-icon.svg";
 import InfoCard from "./InfoCard";
@@ -29,12 +29,12 @@ const PreviewSection: FC = () => {
         <div className="grid grid-cols-2 gap-2">
           <InfoCard
             text="Сократите количество визитов к врачу"
-            iconUrl={HeardIcon.src}
+            Icon={HeardIcon}
             className="bg-primaryRed"
           />
           <InfoCard
             text="Подбор анализов в одном месте"
-            iconUrl={FlaskIcon.src}
+            Icon={FlaskIcon}
             className="bg-primaryBlue"
           />
         </div>

@@ -1,7 +1,8 @@
 export interface IProduct {
-  imageUrl: string;
+  imageSrc: string;
   toUrl: string;
   type: string;
   title: string;
   price: number;
 }
+

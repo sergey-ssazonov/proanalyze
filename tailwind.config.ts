@@ -11,11 +11,20 @@ export default {
         black: "#242424",
         grayText: "#474747",
         grayText2: "#545353",
-        lightGray: "#6B6B6B"
+        lightGray: "#6B6B6B",
       },
       height: {
         vh80: "80vh",
+        vh70: "70vh",
+        85: "340px",
         115: "460px",
+        134: "532px",
+        100: "400px",
+      },
+      width: {
+        130: "520px",
+        156: "624px",
+        182: "728px",
       },
       margin: {
         30: "120px",
@@ -24,3 +33,4 @@ export default {
   },
   plugins: [],
 } satisfies Config;
+

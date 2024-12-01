@@ -1,34 +1,27 @@
 import { Flex } from "antd";
-import Image from "next/image";
 import React, { FC } from "react";
 
 interface IInfoCardProps {
-  iconUrl: string;
+  Icon: React.FC;
   className: string;
   text: string;
 }
 
-const InfoCard: FC<IInfoCardProps> = ({ iconUrl, text, className }) => {
+const InfoCard: FC<IInfoCardProps> = ({ Icon, text, className }) => {
   return (
-    <article className="rounded-3xl bg-primaryGray px-6 py-4 w-full flex gap-2 justify-between items-center">
+    <article className="flex w-full items-center justify-between gap-2 rounded-3xl bg-primaryGray px-6 py-4">
       <Flex
         justify="center"
         align="center"
-        className={`w-12 h-12 flex-shrink-0 rounded-full ${className}`}
+        className={`h-12 w-12 flex-shrink-0 rounded-full ${className}`}
       >
-        <Image
-          src={iconUrl}
-          width={25}
-          height={25}
-          alt={text}
-          priority={true}
-          className="object-cover h-auto w-auto"
-        />
+        <Icon/>
       </Flex>
 
-      <p className="text-sm sm:text-base  flex-grow break-words">{text}</p>
+      <p className="flex-grow break-words text-sm sm:text-base">{text}</p>
     </article>
   );
 };
 
 export default InfoCard;
+

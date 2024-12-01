@@ -8,7 +8,7 @@ interface ILayoutProps {
 
 const Layout: FC<ILayoutProps> = ({ children }) => {
   return (
-    <body className="px-10 pt-4 pb-20">
+    <body className="sm:px-10 px-4 pt-4 pb-20">
       <Header />
       <main>{children}</main>
       <Footer />
