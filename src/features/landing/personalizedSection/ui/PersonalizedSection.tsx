@@ -7,7 +7,7 @@ const PersonalizedSection: FC = () => {
     <section className="w-full bg-transparent">
       <Flex justify="space-between" className="mb-9">
         <h2 className="text-5xl">Быстрый подбор анализов</h2>
-        <h3 className="text-xl font-normal w-80">
+        <h3 className="w-80 text-xl font-normal">
           Только ключевые показатели, без лишних назначений
         </h3>
       </Flex>

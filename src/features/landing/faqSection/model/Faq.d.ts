@@ -1,6 +1,6 @@
- interface IFaqItem {
+interface IFaqItem {
   question: string;
   answer: string;
 }
 
-export default IFaqItem
+export default IFaqItem;

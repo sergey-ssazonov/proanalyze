@@ -11,5 +11,4 @@ const HEADER_ITEMS: IHeaderItem[] = [
   { label: "Контакты", url: "" },
 ];
 
-
-export default HEADER_ITEMS
+export default HEADER_ITEMS;

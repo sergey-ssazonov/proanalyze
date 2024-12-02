@@ -1,1 +1,1 @@
-export { default as AdvantagesSection } from './ui/AdvantagesSection'
+export { default as AdvantagesSection } from "./ui/AdvantagesSection";

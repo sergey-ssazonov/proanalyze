@@ -1,1 +1,1 @@
-export { default as DecryptionSection } from './ui/DecryptionSection'
+export { default as DecryptionSection } from "./ui/DecryptionSection";

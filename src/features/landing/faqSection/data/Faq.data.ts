@@ -23,4 +23,4 @@ const FAQ_ITEMS: IFaqItem[] = [
   },
 ];
 
-export default FAQ_ITEMS
+export default FAQ_ITEMS;

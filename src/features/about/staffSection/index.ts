@@ -1,1 +1,1 @@
-export { default as StaffSection } from './ui/StaffSection'
+export { default as StaffSection } from "./ui/StaffSection";

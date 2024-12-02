@@ -13,7 +13,7 @@ const Logo: FC<ILogoProps> = ({ className }) => {
   return (
     <h2
       onClick={() => router.push("/")}
-      className={`text-primaryRed font-bold hover:cursor-pointer ${className}`}
+      className={`font-bold text-primaryRed hover:cursor-pointer ${className}`}
     >
       Про
       <span className="text-primaryBlue">анализы</span>

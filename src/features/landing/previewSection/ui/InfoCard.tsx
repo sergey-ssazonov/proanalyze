@@ -15,7 +15,7 @@ const InfoCard: FC<IInfoCardProps> = ({ Icon, text, className }) => {
         align="center"
         className={`h-12 w-12 flex-shrink-0 rounded-full ${className}`}
       >
-        <Icon/>
+        <Icon />
       </Flex>
 
       <p className="flex-grow break-words text-sm sm:text-base">{text}</p>
@@ -24,4 +24,3 @@ const InfoCard: FC<IInfoCardProps> = ({ Icon, text, className }) => {
 };
 
 export default InfoCard;
-

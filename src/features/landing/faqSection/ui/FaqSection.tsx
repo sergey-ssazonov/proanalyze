@@ -5,15 +5,15 @@ import CollapseFaq from "./CollapseFaq";
 
 const FaqSection = () => {
   return (
-    <section className="w-full ">
-      <h2 className="text-5xl mb-9">Часто задаваемые вопросы </h2>
+    <section className="w-full">
+      <h2 className="mb-9 text-5xl">Часто задаваемые вопросы </h2>
       <div className="grid grid-cols-2 gap-5">
         <Image
           src={FaqImage.src}
           width={2000}
           height={2500}
           alt="Часто задаваемые вопросы"
-          className="rounded-3xl object-cover w-full h-auto"
+          className="h-auto w-full rounded-3xl object-cover"
           loading="eager"
         />
         <CollapseFaq />

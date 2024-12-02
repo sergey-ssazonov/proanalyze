@@ -13,11 +13,11 @@ const PersonCard: FC<IPersonCardProps> = ({ description, imageSrc, name, post })
         width={4000}
         height={4000}
         alt={name}
-        className="sm:h-85 h-72 w-full rounded-3xl object-cover object-[0%_25%] "
+        className="h-72 w-full rounded-3xl object-cover object-[0%_25%] sm:h-85"
       />
 
       <Flex vertical gap={8} className="p-5">
-        <h2 className="sm:text-xl text-lg font-semibold">{name}</h2>
+        <h2 className="text-lg font-semibold sm:text-xl">{name}</h2>
         <h3 className="font-normal text-primaryBlue">{post}</h3>
         <h4 className="text-sm font-normal leading-5">{description}</h4>
       </Flex>

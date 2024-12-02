@@ -1,1 +1,1 @@
-export { default as AboutClinicSection } from './ui/AboutClinicSection'
+export { default as AboutClinicSection } from "./ui/AboutClinicSection";

@@ -39,4 +39,3 @@ const ProductCard: FC<ICardProductProps> = ({ imageSrc: imageSrc, toUrl, type, t
 };
 
 export default ProductCard;
-

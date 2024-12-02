@@ -5,4 +5,4 @@ interface IStaffItem {
   imageSrc: string;
 }
 
-export default IStaffItem
+export default IStaffItem;

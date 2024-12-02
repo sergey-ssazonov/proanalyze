@@ -17,10 +17,7 @@ export const usePersonalizedModel = () => {
   const [nextStep, setNextStep] = useState<string>(steps[0]);
   const [isFormEmpty, setIsFormEmpty] = useState<boolean>(true);
 
-  const calculateFormPropgress = (
-    values: IPersonalizedData,
-    steps: string[],
-  ): number => {
+  const calculateFormPropgress = (values: IPersonalizedData, steps: string[]): number => {
     const totalSteps = steps.length;
     const filledSteps = Object.values(values).filter((value) => value).length;
 
@@ -43,7 +40,7 @@ export const usePersonalizedModel = () => {
     const genderValue = values.gender;
 
     const isValueEmpty = !Object.values(values).some(
-      (value) => value !== undefined && value !== null && value !== "",
+      (value) => value !== undefined && value !== null && value !== ""
     );
 
     setIsFormEmpty(isValueEmpty);
@@ -57,9 +54,7 @@ export const usePersonalizedModel = () => {
       setFormProgress(calculateFormPropgress(values, steps));
     } else {
       setIsFemale(false);
-      setFormProgress(
-        calculateFormPropgress(omit(values, "menses_day"), steps.slice(0, 3)),
-      );
+      setFormProgress(calculateFormPropgress(omit(values, "menses_day"), steps.slice(0, 3)));
     }
     setNextStep(calculateNextStep(values));
   };

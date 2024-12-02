@@ -127,4 +127,3 @@ export const AGE_OPTIONS: ISelectOption[] = [
   { value: "99", label: "99" },
   { value: "100", label: "100" },
 ];
-

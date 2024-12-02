@@ -38,4 +38,3 @@ const CollapseFaq: FC = () => {
 };
 
 export default CollapseFaq;
-

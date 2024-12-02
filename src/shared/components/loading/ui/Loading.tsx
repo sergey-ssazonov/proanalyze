@@ -4,7 +4,7 @@ import React from "react";
 
 const Loading = () => {
   return (
-    <Flex className="h-screen " align="center" justify="center">
+    <Flex className="h-screen" align="center" justify="center">
       {/* <Spin size="large" /> */}
       <LoadingOutlined spin size={60} />
     </Flex>

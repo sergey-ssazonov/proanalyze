@@ -8,7 +8,7 @@ interface ITagSpanProps {
 const TagSpan: FC<ITagSpanProps> = ({ children, className }) => {
   return (
     <span
-      className={`px-5 rounded-full h-fit text-primaryRed border border-primaryRed w-fit ${className}`}
+      className={`h-fit w-fit rounded-full border border-primaryRed px-5 text-primaryRed ${className}`}
     >
       {children}
     </span>

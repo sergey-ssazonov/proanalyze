@@ -42,4 +42,3 @@ const CatalogSection: FC = () => {
 };
 
 export default CatalogSection;
-
