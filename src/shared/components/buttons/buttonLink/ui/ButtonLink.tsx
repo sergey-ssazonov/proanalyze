@@ -10,7 +10,7 @@ interface IButtonLinkProps {
   clasName?: string;
 }
 
-const ButtonLink: FC<IButtonLinkProps> = ({ href, children, clasName}) => {
+const ButtonLink: FC<IButtonLinkProps> = ({ href, children, clasName }) => {
   const router = useRouter();
   return (
     <Button

@@ -1,7 +1,4 @@
-interface IHeaderItem {
-  label: string;
-  url: string;
-}
+import IHeaderItem from "../model/Header";
 
 const HEADER_ITEMS: IHeaderItem[] = [
   { label: "Каталог анализов", url: "" },

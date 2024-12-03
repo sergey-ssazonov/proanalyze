@@ -17,8 +17,7 @@ const StatisticSection: FC = () => {
               alt="Группа медицинских специалистов, позирующих в клинике. Они одеты в белые халаты или медицинскую форму. В группе четыре женщины и трое мужчин, один человек сидит."
               className="rounded-3xl object-cover"
               priority
-          loading="eager"
-
+              loading="eager"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>

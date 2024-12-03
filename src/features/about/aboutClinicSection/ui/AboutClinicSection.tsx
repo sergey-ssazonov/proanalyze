@@ -4,8 +4,8 @@ import FounderImage from "@/public/images/about/founder-image.jpg";
 
 const AboutClinicSection: FC = () => {
   return (
-    <section className="flex w-full flex-col rounded-3xl bg-white sm:h-vh80 sm:flex-row">
-      <div className="flex flex-col gap-4 sm:gap-5 w-full p-4 sm:w-1/2 sm:p-11">
+    <section className="flex w-full flex-col sm:justify-between rounded-3xl bg-white sm:h-vh80 sm:flex-row">
+      <div className="flex w-full flex-col gap-4 p-4 sm:w-1/2 sm:gap-5 sm:p-11">
         <h2 className="text-3xl font-semibold sm:text-5xl">О клинике</h2>
 
         <p className="font-normal leading-6 sm:text-2xl sm:leading-8">
@@ -29,7 +29,7 @@ const AboutClinicSection: FC = () => {
           loading="eager"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        <span className="absolute bottom-3 left-3 flex items-center justify-center rounded-xl bg-white bg-opacity-70 px-3 py-1 text-sm sm:bottom-5 sm:left-5 sm:rounded-3xl sm:px-5 sm:py-2 sm:text-base sm:w-fit w-2/3">
+        <span className="absolute bottom-3 left-3 flex w-2/3 items-center justify-center rounded-xl bg-white bg-opacity-70 px-3 py-1 text-sm sm:bottom-5 sm:left-5 sm:w-fit sm:rounded-3xl sm:px-5 sm:py-2 sm:text-base">
           Founder, Главный врач - Максим Евгеньевич Поткин
         </span>
       </div>

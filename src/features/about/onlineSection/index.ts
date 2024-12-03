@@ -1,1 +1,1 @@
-export { default as OnlineSection } from './ui/OnlineSection'
+export { default as OnlineSection } from "./ui/OnlineSection";

@@ -1,1 +1,1 @@
-export { default as StatisticSection } from './ui/StatisticSection'
+export { default as StatisticSection } from "./ui/StatisticSection";

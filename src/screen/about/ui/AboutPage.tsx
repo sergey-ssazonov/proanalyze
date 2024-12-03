@@ -8,13 +8,13 @@ import React, { FC } from "react";
 
 const AboutPage: FC = () => {
   return (
-    <div className="mb-30 flex flex-col gap-16 sm:gap-32">
+    <div className="mb-16 sm:mb-30 flex flex-col gap-16 sm:gap-32">
       <AboutClinicSection />
       <AdvantagesSection />
       <StaffSection />
       <DecryptionSection />
-      <StatisticSection/>
-      <OnlineSection/>
+      <StatisticSection />
+      <OnlineSection />
     </div>
   );
 };

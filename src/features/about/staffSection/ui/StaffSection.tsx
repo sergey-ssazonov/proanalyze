@@ -6,7 +6,7 @@ import PersonCard from "./PersonCard";
 const StaffSection: FC = () => {
   return (
     <section>
-      <h2 className="mb-6 w-2/3 text-3xl sm:text-5xl sm:mb-9">Коллектив</h2>
+      <h2 className="mb-6 w-2/3 text-3xl sm:mb-9 sm:text-5xl">Коллектив</h2>
       <Row gutter={[20, 20]}>
         {STAFF_ITEMS.map((person, index) => (
           <Col key={index} xs={24} sm={12} lg={8}>
