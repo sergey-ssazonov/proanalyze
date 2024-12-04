@@ -1,10 +1,10 @@
-import { Button, ConfigProvider, Flex } from "antd";
+import { Flex } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
 import LinkButton from "./LinkButton";
 import { TagSpan } from "@/src/shared/components/tagSpan";
 import { IProduct } from "@/src/features/landing/catalogSection/interfaces/product.interface";
-import { secondaryThemeAntd } from "@/src/shared/antd/theme";
+import BuyButton from "./BuyButton";
 
 interface ICardProductProps extends IProduct {}
 
@@ -17,21 +17,17 @@ const ProductCard: FC<ICardProductProps> = ({ imageSrc: imageSrc, toUrl, type, t
         width={4000}
         height={4000}
         alt={title}
-        className="h-80 w-full rounded-3xl object-cover"
+        className="h-40 w-full rounded-3xl object-cover sm:h-80"
       />
 
-      <div className="px-5 py-6">
-        <Flex justify="space-between" align="center">
-          <TagSpan>{type}</TagSpan>
-          <span className="text-2xl font-semibold">{price}₽</span>
+      <div className="p-4 sm:p-5">
+        <Flex justify="space-between" align="center" className="mb-1 sm:mb-0">
+          <TagSpan className="text-xxs px-2 sm:px-5 sm:text-base">{type}</TagSpan>
+          <span className="text-xs font-semibold sm:text-2xl">{price}₽</span>
         </Flex>
         <Flex justify="space-between" align="center">
-          <h3 className="text-left text-xl">{title}</h3>
-          <ConfigProvider theme={secondaryThemeAntd}>
-            <Button className="w-32" shape="round" type="primary">
-              Купить
-            </Button>
-          </ConfigProvider>
+          <h3 className="text-xxs text-left sm:text-xl">{title}</h3>
+          <BuyButton/>
         </Flex>
       </div>
     </article>

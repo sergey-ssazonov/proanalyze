@@ -16,24 +16,33 @@ const mockProduct: IProduct = {
 const CatalogSection: FC = () => {
   return (
     <section className="w-full bg-transparent">
-      <Flex justify="space-between" className="mb-9">
-        <h2 className="text-5xl">Рекомендации по анализам</h2>
-        <h3 className="w-80 text-xl font-normal">Узнайте, какие именно анализы помогут вам</h3>
+      <Flex justify="space-between" className="mb-6 sm:mb-9">
+        <h2 className="text-3xl sm:text-5xl">Рекомендации по анализам</h2>
+        <h3 className="hidden w-80 text-xl font-normal sm:static">
+          Узнайте, какие именно анализы помогут вам
+        </h3>
       </Flex>
-      <Row className="w-full" gutter={[16, 16]} justify="center">
-        <Col xs={24} sm={12} lg={8}>
+      <Row
+        className="w-full"
+        gutter={[
+          { xs: 4, md: 16 },
+          { xs: 4, md: 16 },
+        ]}
+        justify="center"
+      >
+        <Col xs={12} lg={8}>
           <ProductCard {...mockProduct} />
         </Col>
-        <Col xs={24} sm={12} lg={8}>
+        <Col xs={12} lg={8}>
           <ProductCard {...mockProduct} />
         </Col>
-        <Col xs={24} sm={12} lg={8}>
+        <Col xs={12} lg={8}>
           <ProductCard {...mockProduct} />
         </Col>
-        <Col xs={24} sm={12} lg={8}>
+        <Col xs={12} lg={8}>
           <ProductCard {...mockProduct} />
         </Col>
-        <Col xs={24} sm={12} lg={8}>
+        <Col xs={12} lg={8}>
           <ProductCard {...mockProduct} />
         </Col>
       </Row>

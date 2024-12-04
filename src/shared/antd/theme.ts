@@ -6,7 +6,7 @@ export const themeAntd: ThemeConfig = {
     sizeLG: 58,
 
     controlHeight: 40,
-    controlHeightLG: 52,
+    controlHeightLG: 46,
     fontSize: 16,
     // screenLG: 1024,
   },
@@ -51,5 +51,11 @@ export const themeAntd: ThemeConfig = {
 export const secondaryThemeAntd: ThemeConfig = {
   token: {
     colorPrimary: "#FF4A37",
+    controlHeightSM: 20,
+  },
+  components: {
+    Button: {
+      contentFontSizeSM: 10,
+    },
   },
 };

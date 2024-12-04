@@ -7,12 +7,12 @@ import React, { FC } from "react";
 
 const LandingPage: FC = () => {
   return (
-    <Flex vertical gap={120} className="mb-30">
+    <div className="mb-16 flex flex-col gap-16 sm:mb-30 sm:gap-32">
       <PreviewSection />
       <PersonalizedSection />
       <CatalogSection />
       <FaqSection />
-    </Flex>
+    </div>
   );
 };
 

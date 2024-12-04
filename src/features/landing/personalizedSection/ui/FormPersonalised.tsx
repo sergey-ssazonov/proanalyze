@@ -21,13 +21,13 @@ const FormPersonalized = () => {
       layout="vertical"
       form={form}
       name="formPersonalized"
-      className="flex h-vh80 w-full flex-col items-center justify-center rounded-3xl bg-white"
+      className="flex w-full flex-col items-center justify-center rounded-3xl bg-white sm:h-vh80"
       onValuesChange={handleValuesChange}
     >
-      <Flex vertical align="center" className="w-2/3">
-        <h3 className="mb-14 text-3xl font-medium">Введите данные</h3>
+      <Flex vertical align="center" className="w-full p-4 sm:w-2/3 sm:p-0">
+        <h3 className="mb-7 w-full text-2xl sm:mb-14 sm:w-fit sm:text-3xl">Введите данные</h3>
 
-        <div className="mb-5 w-full">
+        <div className="w-full sm:mb-5">
           <span className="text-xl">Заполнено</span>
           <Progress percent={formProgress} />
         </div>
@@ -41,12 +41,13 @@ const FormPersonalized = () => {
             type="text"
             onClick={handleResetForm}
             style={{ visibility: isFormEmpty ? "hidden" : "visible" }}
+            className="mt-2 sm:mt-0"
           >
             Очистить форму
           </Button>
         </Flex>
-        <Row className="h-auto w-full" gutter={[16, 10]}>
-          <Col span={12} className="">
+        <Row className="h-auto w-full" gutter={[{sm:0, md:16}, {sm:8, md:10}]}>
+          <Col xs={24} lg={12} className="w-full">
             <Form.Item
               name="gender"
               rules={[{ required: true, message: "Укажите ваш пол" }]}
@@ -66,7 +67,7 @@ const FormPersonalized = () => {
               />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col xs={24} lg={12}>
             <Form.Item
               name="age"
               rules={[{ required: true, message: "Укажите ваш возраст" }]}
@@ -86,7 +87,7 @@ const FormPersonalized = () => {
               />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col xs={24} lg={12}>
             <Form.Item
               name="doctor"
               rules={[
@@ -113,7 +114,7 @@ const FormPersonalized = () => {
           </Col>
 
           {isFemale && (
-            <Col span={12}>
+            <Col xs={24} lg={12}>
               <Form.Item
                 name="menses_day"
                 rules={[
@@ -142,7 +143,7 @@ const FormPersonalized = () => {
         </Row>
         <Form.Item shouldUpdate noStyle>
           <Button
-            className="mb-4 mt-14 w-fit"
+            className="mb-4 mt-10 w-full sm:mt-14 sm:w-fit"
             type="primary"
             size="large"
             shape="round"

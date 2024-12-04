@@ -4,7 +4,7 @@ import FounderImage from "@/public/images/about/founder-image.jpg";
 
 const AboutClinicSection: FC = () => {
   return (
-    <section className="flex w-full flex-col sm:justify-between rounded-3xl bg-white sm:h-vh80 sm:flex-row">
+    <section className="flex w-full flex-col rounded-3xl bg-white sm:h-vh80 sm:flex-row sm:justify-between">
       <div className="flex w-full flex-col gap-4 p-4 sm:w-1/2 sm:gap-5 sm:p-11">
         <h2 className="text-3xl font-semibold sm:text-5xl">О клинике</h2>
 
