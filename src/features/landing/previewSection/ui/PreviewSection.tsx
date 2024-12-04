@@ -34,7 +34,6 @@ const PreviewSection: FC = () => {
             className="col-span-5 sm:col-span-3"
             color="bg-primaryBlue"
           />
-          
         </div>
       </Flex>
       <Image

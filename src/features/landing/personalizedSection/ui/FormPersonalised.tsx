@@ -46,7 +46,13 @@ const FormPersonalized = () => {
             Очистить форму
           </Button>
         </Flex>
-        <Row className="h-auto w-full" gutter={[{sm:0, md:16}, {sm:8, md:10}]}>
+        <Row
+          className="h-auto w-full"
+          gutter={[
+            { sm: 0, md: 16 },
+            { sm: 8, md: 10 },
+          ]}
+        >
           <Col xs={24} lg={12} className="w-full">
             <Form.Item
               name="gender"

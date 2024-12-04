@@ -5,11 +5,17 @@ import { CloseOutlined, MenuOutlined, ShoppingCartOutlined } from "@ant-design/i
 import { Button, Flex } from "antd";
 
 import React, { FC, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import Navigation from "./NavItem";
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);

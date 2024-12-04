@@ -22,12 +22,12 @@ const ProductCard: FC<ICardProductProps> = ({ imageSrc: imageSrc, toUrl, type, t
 
       <div className="p-4 sm:p-5">
         <Flex justify="space-between" align="center" className="mb-1 sm:mb-0">
-          <TagSpan className="text-xxs px-2 sm:px-5 sm:text-base">{type}</TagSpan>
+          <TagSpan className="px-2 text-xxs sm:px-5 sm:text-base">{type}</TagSpan>
           <span className="text-xs font-semibold sm:text-2xl">{price}₽</span>
         </Flex>
         <Flex justify="space-between" align="center">
-          <h3 className="text-xxs text-left sm:text-xl">{title}</h3>
-          <BuyButton/>
+          <h3 className="text-left text-xxs sm:text-xl">{title}</h3>
+          <BuyButton />
         </Flex>
       </div>
     </article>

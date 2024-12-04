@@ -30,9 +30,9 @@ export default {
         30: "120px",
       },
       fontSize: {
-        'xxxs': "6px",
-        'xxs': "8px",
-      }
+        xxxs: "6px",
+        xxs: "8px",
+      },
     },
   },
   plugins: [],

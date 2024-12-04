@@ -16,7 +16,7 @@ const InfoCard: FC<IInfoCardProps> = ({ Icon, text, className, color }) => {
       <Flex
         justify="center"
         align="center"
-        className={`h-10 sm:h-12 w-10 sm:w-12 flex-shrink-0 rounded-full ${color}`}
+        className={`h-10 w-10 flex-shrink-0 rounded-full sm:h-12 sm:w-12 ${color}`}
       >
         <div className="sm:scale-125">
           <Icon />
