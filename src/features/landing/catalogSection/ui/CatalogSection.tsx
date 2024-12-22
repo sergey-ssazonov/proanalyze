@@ -1,9 +1,10 @@
-import { Col, Flex, Row } from "antd";
+import { Col, Row } from "antd";
 import React, { FC } from "react";
 import ProductCard from "./ProductCard";
 import { IProduct } from "@/src/features/landing/catalogSection/interfaces/product.interface";
 
 import Product1Image from "@/public/images/landing/product1-image.png";
+import { TitleSection } from "@/src/shared/components/titleSection";
 
 const mockProduct: IProduct = {
   imageSrc: Product1Image.src,
@@ -16,12 +17,11 @@ const mockProduct: IProduct = {
 const CatalogSection: FC = () => {
   return (
     <section className="w-full bg-transparent">
-      <Flex justify="space-between" className="mb-6 sm:mb-9">
-        <h2 className="text-3xl sm:text-5xl">Рекомендации по анализам</h2>
-        <h3 className="hidden w-80 text-xl font-normal sm:static">
-          Узнайте, какие именно анализы помогут вам
-        </h3>
-      </Flex>
+      <TitleSection
+        title="Готовые перечни анализов"
+        subTitle="Узнайте, какие именно анализы помогут вам"
+      />
+
       <Row
         className="w-full"
         gutter={[
@@ -30,19 +30,19 @@ const CatalogSection: FC = () => {
         ]}
         justify="center"
       >
-        <Col xs={12} lg={8}>
+        <Col xs={12} md={8} lg={6}>
           <ProductCard {...mockProduct} />
         </Col>
-        <Col xs={12} lg={8}>
+        <Col xs={12} md={8} lg={6}>
           <ProductCard {...mockProduct} />
         </Col>
-        <Col xs={12} lg={8}>
+        <Col xs={12} md={8} lg={6}>
           <ProductCard {...mockProduct} />
         </Col>
-        <Col xs={12} lg={8}>
+        <Col xs={12} md={8} lg={6}>
           <ProductCard {...mockProduct} />
         </Col>
-        <Col xs={12} lg={8}>
+        <Col xs={12} md={8} lg={6}>
           <ProductCard {...mockProduct} />
         </Col>
       </Row>

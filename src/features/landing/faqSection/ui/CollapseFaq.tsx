@@ -10,9 +10,9 @@ const CollapseFaq: FC = () => {
   const width = useWindowWidth();
   const itemsCollapseFaq = FAQ_ITEMS.map((el, index) => ({
     key: index.toString(),
-    label: <h3 className="text-xl font-medium sm:text-2xl">{el.question}</h3>,
+    label: <h3 className="text-lg font-medium sm:text-xl">{el.question}</h3>,
     children: <p className="text-grayText">{el.answer}</p>,
-    className: "bg-white  mb-2 sm:p-4",
+    className: "bg-white mb-2 sm:p-4",
     style: { borderRadius: width && width < 640 ? 16 : 24 },
   }));
 

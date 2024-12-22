@@ -1,7 +1,7 @@
 import IHeaderItem from "../model/Header";
 
 const HEADER_ITEMS: IHeaderItem[] = [
-  { label: "Главная страница", url: "/" },
+  // { label: "Главная страница", url: "/" },
   { label: "Каталог анализов", url: "" },
   { label: "Подбор анализов", url: "" },
   { label: "О нас", url: "/about" },

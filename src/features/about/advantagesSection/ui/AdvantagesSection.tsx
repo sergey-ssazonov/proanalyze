@@ -1,17 +1,15 @@
-"use client";
-
 import { Col, Flex, Row } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
 import ADVATAGES_DATA from "../data/Advatages.data";
 import OnlineImage from "@/public/images/about/online-image.jpg";
+import { TitleSection } from "@/src/shared/components/titleSection";
 
 const AdvantagesSection: FC = () => {
   return (
     <section>
-      <h2 className="mb-6 w-full text-3xl sm:mb-9 sm:w-2/3 sm:text-5xl">
-        Сочетаем лучшие медицинские практики с инновациями
-      </h2>
+      <TitleSection title="Сочетаем лучшие медицинские практики с инновациями"/>
+
       <Row gutter={[20, 20]}>
         <Col lg={8} xs={24}>
           <div className="relative min-h-64 w-full md:h-full">

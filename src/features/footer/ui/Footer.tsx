@@ -1,12 +1,17 @@
-import { Logo } from "@/src/shared/components/logo";
-import { Flex } from "antd";
-import Link from "next/link";
+// import { Logo } from "@/src/shared/components/logo";
+import { Col,  Row } from "antd";
+// import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
   return (
     <footer className="w-full rounded-3xl bg-white p-4 sm:p-12">
-      <Logo className="mb-5 text-5xl sm:mb-10 sm:text-8xl" />
+      <Row>
+        <Col xs={24} md={8} lg={6}>
+        </Col>
+      </Row>
+
+      {/* <Logo className="mb-5 text-5xl sm:mb-10 sm:text-8xl" />
 
       <p className="mb-5 text-sm font-normal sm:text-lg">
         Общество с ограниченной ответственностью «Аймед»
@@ -74,7 +79,7 @@ const Footer = () => {
         Онлайн - консультация не является аналогом медицинского приема, медицинского вмешательства
         и/или медицинской услугой, не может являться основанием для постановки диагноза , назначения
         медикаментов или плана лечения.
-      </p>
+      </p> */}
     </footer>
   );
 };

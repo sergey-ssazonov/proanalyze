@@ -1,0 +1,18 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Building the project Docker..."
+    - docker build -t proanalyze:latest .
+  tags:
+    - docker
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying the project..."
+  tags:
+    - docker

@@ -17,7 +17,7 @@ const ProductCard: FC<ICardProductProps> = ({ imageSrc: imageSrc, toUrl, type, t
         width={4000}
         height={4000}
         alt={title}
-        className="h-40 w-full rounded-3xl object-cover sm:h-80"
+        className="h-40 w-full rounded-3xl object-cover sm:h-60"
       />
 
       <div className="p-4 sm:p-5">

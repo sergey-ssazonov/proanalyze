@@ -34,7 +34,7 @@ const Header: FC = () => {
   return (
     <>
       <header className="relative z-20 mb-4 flex h-16 w-full items-center justify-between rounded-3xl bg-white px-4 sm:px-9">
-        <Logo className="text-3xl" />
+        <Logo className="text-2xl" />
         <nav className="hidden lg:block">
           <Navigation />
         </nav>

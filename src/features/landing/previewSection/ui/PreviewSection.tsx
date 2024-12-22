@@ -2,8 +2,10 @@ import { Button, Flex } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
 import PreviewImage from "@/public/images/landing/preview-image.png";
-import FlaskIcon from "@/public/icons/flask-icon-2.svg";
-import HeardIcon from "@/public/icons/heard-icon-2.svg";
+import FlaskIcon from "@/public/icons/flask-icon-sm.svg";
+import HeardIcon from "@/public/icons/heard-icon-sm.svg";
+import TabletIcon from "@/public/icons/tablet-icon-sm.svg";
+import YogaIcon from "@/public/icons/yoga-icon-sm.svg";
 import InfoCard from "./InfoCard";
 import { TagSpan } from "@/src/shared/components/tagSpan";
 
@@ -12,7 +14,7 @@ const PreviewSection: FC = () => {
     <section className="flex w-full flex-col rounded-3xl bg-white sm:h-vh80 sm:flex-row">
       <Flex vertical justify="space-between" className="h-full w-full p-4 sm:w-1/2 sm:p-9">
         <div className="mb-11 flex flex-col gap-5 sm:gap-7">
-          <TagSpan className="py-1">Сервис</TagSpan>
+          <TagSpan className="py-1">Сервис - конфигуратор анализов</TagSpan>
           <h2 className="text-3xl font-semibold sm:text-5xl">Какие анализы сдать?</h2>
           <h3 className="font-normal sm:text-2xl sm:font-medium">
             Сервис по подготовке перечня необходимых анализов
@@ -25,14 +27,28 @@ const PreviewSection: FC = () => {
           <InfoCard
             text="Сократите количество визитов к врачу"
             Icon={HeardIcon}
-            className="col-span-5 sm:col-span-3"
+            classNameIcon="sm:scale-125"
+            className="col-span-3"
             color="bg-primaryRed"
           />
           <InfoCard
             text="Подбор анализов в одном месте"
             Icon={FlaskIcon}
-            className="col-span-5 sm:col-span-3"
+            classNameIcon="sm:scale-125"
+            className="col-span-3"
             color="bg-primaryBlue"
+          />
+          <InfoCard
+            text="Чек-апы всего организма"
+            Icon={TabletIcon}
+            className="col-span-3"
+            color="bg-primaryBlue"
+          />
+          <InfoCard
+            text="Для всей семьи"
+            Icon={YogaIcon}
+            className="col-span-3"
+            color="bg-primaryRed"
           />
         </div>
       </Flex>
