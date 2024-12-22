@@ -1,9 +1,7 @@
-version: "3.8"
-
 services:
   prod:
-    image: proanalyze:latest
-    container_name: prod
+    image: sergeysazonov/proanalyze:${TAG}
+    container_name: proanalyze-prod
     ports:
-      - "4000:3000"
+      - "5000:3000"
     restart: always
