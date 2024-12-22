@@ -8,7 +8,7 @@ import { TitleSection } from "@/src/shared/components/titleSection";
 const AdvantagesSection: FC = () => {
   return (
     <section>
-      <TitleSection title="Сочетаем лучшие медицинские практики с инновациями"/>
+      <TitleSection title="Сочетаем лучшие медицинские практики с инновациями" />
 
       <Row gutter={[20, 20]}>
         <Col lg={8} xs={24}>

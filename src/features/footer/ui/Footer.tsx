@@ -1,5 +1,5 @@
 // import { Logo } from "@/src/shared/components/logo";
-import { Col,  Row } from "antd";
+import { Col, Row } from "antd";
 // import Link from "next/link";
 import React from "react";
 
@@ -7,8 +7,7 @@ const Footer = () => {
   return (
     <footer className="w-full rounded-3xl bg-white p-4 sm:p-12">
       <Row>
-        <Col xs={24} md={8} lg={6}>
-        </Col>
+        <Col xs={24} md={8} lg={6}></Col>
       </Row>
 
       {/* <Logo className="mb-5 text-5xl sm:mb-10 sm:text-8xl" />
