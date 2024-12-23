@@ -57,7 +57,7 @@ const PreviewSection: FC = () => {
         width={2000}
         height={2500}
         alt="Рука складывает пробирки"
-        className="h-96 w-full rounded-3xl object-cover sm:h-auto sm:w-1/2"
+        className="h-64 w-full rounded-3xl object-cover sm:h-auto sm:w-1/2"
         priority={true}
         loading="eager"
       />

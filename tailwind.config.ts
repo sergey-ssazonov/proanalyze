@@ -12,6 +12,7 @@ export default {
         grayText: "#474747",
         grayText2: "#545353",
         lightGray: "#6B6B6B",
+        lightGray2: "#9EA6B5",
       },
       height: {
         vh80: "80vh",
