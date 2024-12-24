@@ -12,7 +12,7 @@ interface IInfoCardProps {
 const InfoCard: FC<IInfoCardProps> = ({ Icon, text, className, color, classNameIcon }) => {
   return (
     <article
-      className={`flex w-full items-center justify-between gap-2 rounded-xl bg-primaryGray px-2 py-3 sm:rounded-3xl sm:px-6 sm:py-4 ${className}`}
+      className={`flex w-full items-center justify-between gap-2 rounded-xl bg-primaryGray px-2 py-3 sm:rounded-2xl sm:px-6 sm:py-4 ${className}`}
     >
       <Flex
         justify="center"

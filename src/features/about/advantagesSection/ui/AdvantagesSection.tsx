@@ -17,7 +17,7 @@ const AdvantagesSection: FC = () => {
               src={OnlineImage.src}
               fill
               alt=""
-              className="rounded-3xl object-cover"
+              className="rounded-2xl object-cover"
               priority={true}
               loading="eager"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -26,7 +26,7 @@ const AdvantagesSection: FC = () => {
         </Col>
         <Col lg={16} xs={24}>
           <Row
-            className="rounded-3xl bg-white p-4 sm:px-16 sm:py-11"
+            className="rounded-2xl bg-white p-4 sm:px-16 sm:py-11"
             gutter={[0, { xs: 25, lg: 36 }]}
           >
             {ADVATAGES_DATA.map((advantage, index) => (

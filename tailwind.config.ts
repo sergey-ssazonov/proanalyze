@@ -34,6 +34,7 @@ export default {
         xxxs: "6px",
         xxs: "9px",
       },
+      
     },
   },
   plugins: [],

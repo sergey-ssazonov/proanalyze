@@ -8,14 +8,6 @@ export const GENDER_OPTIONS: ISelectOption[] = [
   { label: "Женский", value: "female" },
 ];
 
-export const DOCTOR_OPTIONS: ISelectOption[] = [
-  { label: "врач1", value: "doctor1" },
-  { label: "врач2", value: "doctor2" },
-  { label: "врач3", value: "doctor3" },
-  { label: "врач4", value: "doctor4" },
-  { label: "врач5", value: "doctor5" },
-];
-
 export const MENSES_OPTIONS: ISelectOption[] = [
   { label: "вариант1", value: "variant1" },
   { label: "вариант2", value: "variant2" },

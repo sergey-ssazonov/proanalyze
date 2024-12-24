@@ -11,7 +11,7 @@ import { TagSpan } from "@/src/shared/components/tagSpan";
 
 const PreviewSection: FC = () => {
   return (
-    <section className="flex w-full flex-col rounded-3xl bg-white sm:h-vh80 sm:flex-row">
+    <section className="flex w-full flex-col rounded-2xl bg-white sm:h-vh80 sm:flex-row">
       <Flex vertical justify="space-between" className="h-full w-full p-4 sm:w-1/2 sm:p-9">
         <div className="mb-11 flex flex-col gap-5 sm:gap-7">
           <TagSpan className="py-1">Сервис - конфигуратор анализов</TagSpan>
@@ -57,7 +57,7 @@ const PreviewSection: FC = () => {
         width={2000}
         height={2500}
         alt="Рука складывает пробирки"
-        className="h-64 w-full rounded-3xl object-cover sm:h-auto sm:w-1/2"
+        className="h-64 w-full rounded-2xl object-cover sm:h-auto sm:w-1/2"
         priority={true}
         loading="eager"
       />

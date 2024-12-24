@@ -1,8 +1,8 @@
 "use client";
 
-import { Button, Col, Flex, Form, Progress, Row, Select } from "antd";
+import { Button, Col, Flex, Form, Input, Progress, Row, Select } from "antd";
 import React from "react";
-import { AGE_OPTIONS, DOCTOR_OPTIONS, GENDER_OPTIONS, MENSES_OPTIONS } from "../data/Form.data";
+import { AGE_OPTIONS, GENDER_OPTIONS, MENSES_OPTIONS } from "../data/Form.data";
 import { usePersonalizedModel } from "../model/PersonalizedModel";
 
 const FormPersonalized = () => {
@@ -21,7 +21,7 @@ const FormPersonalized = () => {
       layout="vertical"
       form={form}
       name="formPersonalized"
-      className="flex w-full flex-col items-center justify-center rounded-3xl bg-white sm:h-vh80"
+      className="flex w-full flex-col items-center justify-center rounded-2xl bg-white sm:h-vh80"
       onValuesChange={handleValuesChange}
     >
       <Flex vertical align="center" className="w-full p-4 sm:w-2/3 sm:p-0">
@@ -106,14 +106,9 @@ const FormPersonalized = () => {
                 marginBottom: "0.5rem",
               }}
             >
-              <Select
+              <Input
                 size="large"
-                virtual={false}
                 placeholder="К какому врачу планируете визит?"
-                options={DOCTOR_OPTIONS}
-                dropdownStyle={{
-                  borderRadius: "8px",
-                }}
                 className="w-full"
               />
             </Form.Item>

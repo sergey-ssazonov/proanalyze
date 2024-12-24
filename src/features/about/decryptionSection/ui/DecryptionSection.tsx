@@ -12,7 +12,7 @@ const DecryptionSection: FC = () => {
           <Flex
             vertical
             justify="space-between"
-            className="w-full gap-11 rounded-3xl bg-white p-4 sm:p-11"
+            className="w-full gap-11 rounded-2xl bg-white p-4 sm:p-11"
           >
             <Flex vertical className="gap-5 sm:gap-8">
               <h2 className="text-3xl sm:text-5xl">Расшифровка анализов</h2>
@@ -32,7 +32,7 @@ const DecryptionSection: FC = () => {
               src={DecryptionImage.src}
               fill
               alt="Руки в синих медицинских перчатках работают с микроскопом, изучая образец."
-              className="rounded-3xl object-cover"
+              className="rounded-2xl object-cover"
               priority
               loading="eager"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
