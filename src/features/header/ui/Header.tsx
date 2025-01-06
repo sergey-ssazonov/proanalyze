@@ -33,7 +33,7 @@ const Header: FC = () => {
 
   return (
     <>
-      <header className="relative z-20 mb-4 flex h-16 w-full items-center justify-between rounded-3xl bg-white px-4 sm:px-9">
+      <header className="relative z-20 mb-4 flex h-16 w-full items-center justify-between rounded-2xl bg-white px-4 sm:px-9">
         <Logo className="text-2xl" />
         <nav className="hidden lg:block">
           <Navigation />
@@ -56,7 +56,7 @@ const Header: FC = () => {
         }`}
       >
         <nav
-          className={`rounded-3xl bg-white px-9 py-5 transition-transform duration-500 ${
+          className={`rounded-2xl bg-white px-9 py-5 transition-transform duration-500 ${
             isMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >

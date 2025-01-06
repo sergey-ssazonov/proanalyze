@@ -3,4 +3,4 @@ interface IFooterItem {
   url: string;
 }
 
-export {IFooterItem}
+export { IFooterItem };

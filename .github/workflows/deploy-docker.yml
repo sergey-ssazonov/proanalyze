@@ -1,12 +1,12 @@
-name: Build and Push Docker Image
+name: Build image and Deploy on VPS
 
 on:
   pull_request:
     branches:
-      - prod 
+      - prod
   push:
     branches:
-      - prod 
+      - prod
 
 jobs:
   build-and-push:
@@ -14,20 +14,20 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3  
+        uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2  
+        uses: docker/setup-buildx-action@v2
 
       - name: Log in to Docker Hub
-        uses: docker/login-action@v2  
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/proanalyze:${{ github.sha }} .  
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/proanalyze:${{ github.sha }} .
 
       - name: Push Docker image to Docker Hub
         run: |
@@ -45,6 +45,3 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/proanalyze:latest  
             TAG=${{ github.sha }} docker-compose down
             TAG=${{ github.sha }} docker-compose up -d
-
-
-          

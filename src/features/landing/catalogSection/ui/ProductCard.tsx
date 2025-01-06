@@ -10,14 +10,14 @@ interface ICardProductProps extends IProduct {}
 
 const ProductCard: FC<ICardProductProps> = ({ imageSrc: imageSrc, toUrl, type, title, price }) => {
   return (
-    <article className="relative w-full rounded-3xl bg-white">
+    <article className="relative w-full rounded-2xl bg-white">
       <LinkButton toUrl={toUrl} />
       <Image
         src={imageSrc}
         width={4000}
         height={4000}
         alt={title}
-        className="h-40 w-full rounded-3xl object-cover sm:h-60"
+        className="h-40 w-full rounded-2xl object-cover sm:h-60"
       />
 
       <div className="p-4 sm:p-5">
@@ -26,7 +26,7 @@ const ProductCard: FC<ICardProductProps> = ({ imageSrc: imageSrc, toUrl, type, t
           <span className="text-xs font-semibold sm:text-2xl">{price}₽</span>
         </Flex>
         <Flex justify="space-between" align="center">
-          <h3 className="text-left text-xxs sm:text-xl">{title}</h3>
+          <h3 className="text-left text-xxs sm:text-lg">{title}</h3>
           <BuyButton />
         </Flex>
       </div>

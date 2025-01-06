@@ -2,7 +2,7 @@ import { ButtonLink } from "@/src/shared/components/buttons/buttonLink";
 import { Col, Flex, Row } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
-import OnlineImage from "@/public/images/about/online-image.jpg";
+import OnlineImage from "@/public/images/about/online-image.webp";
 
 const OnlineSection: FC = () => {
   return (
@@ -12,7 +12,7 @@ const OnlineSection: FC = () => {
           <Flex
             vertical
             justify="space-between"
-            className="w-full gap-11 rounded-3xl bg-white p-4 sm:p-11"
+            className="w-full gap-11 rounded-2xl bg-white p-4 sm:p-11"
           >
             <Flex vertical className="gap-5 sm:gap-8">
               <h2 className="text-3xl sm:text-5xl">Онлайн консультация с врачом</h2>
@@ -22,8 +22,8 @@ const OnlineSection: FC = () => {
                 рекомендации по вашему здоровью. Удобно, быстро и безопасно.
               </p>
             </Flex>
-            <ButtonLink clasName="w-full sm:w-56" href="https://proanalizy.ru/">
-              Получить
+            <ButtonLink className="w-full sm:w-56" href="https://proanalizy.ru/">
+              Задать вопрос врачу
             </ButtonLink>
           </Flex>
         </Col>
@@ -33,7 +33,7 @@ const OnlineSection: FC = () => {
               src={OnlineImage.src}
               fill
               alt="Женщина в медицинской одежде сидит за столом с ноутбуком и микрофоном, участвуя в видеоконференции. На столе также видны очки и небольшое устройство, а за окном — светлый фон."
-              className="rounded-3xl object-cover"
+              className="rounded-2xl object-cover"
               priority
               loading="eager"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

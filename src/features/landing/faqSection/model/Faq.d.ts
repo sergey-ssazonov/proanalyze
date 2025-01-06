@@ -1,6 +1,6 @@
 interface IFaqItem {
   question: string;
-  answer: string;
+  answer: JSX.Element;
 }
 
 export default IFaqItem;

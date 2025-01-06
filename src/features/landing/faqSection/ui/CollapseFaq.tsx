@@ -13,7 +13,7 @@ const CollapseFaq: FC = () => {
     label: <h3 className="text-lg font-medium sm:text-xl">{el.question}</h3>,
     children: <p className="text-grayText">{el.answer}</p>,
     className: "bg-white mb-2 sm:p-4",
-    style: { borderRadius: width && width < 640 ? 16 : 24 },
+    style: { borderRadius: 16 },
   }));
 
   return (
@@ -33,7 +33,7 @@ const CollapseFaq: FC = () => {
       }
       expandIconPosition="end"
       style={{ border: "none" }}
-      className="sm:oreder-2 order-1 w-full rounded-3xl"
+      className="w-full rounded-2xl"
       items={itemsCollapseFaq}
     />
   );

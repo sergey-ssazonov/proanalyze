@@ -1,11 +1,11 @@
 import IStaffItem from "../model/Staff";
 
-import FarinaYulia from "@/public/images/staff/farina_yulia.png";
-import BersenevDenis from "@/public/images/staff/bersenev_denis.jpg";
-import FilipovIgor from "@/public/images/staff/filipov_igor.png";
-import PotkinMaksim from "@/public/images/staff/potkin_maksim.jpg";
-import PopovKirill from "@/public/images/staff/popov_kirill.png";
-import KorchemkinaLilia from "@/public/images/staff/korchemkina_lilia.png";
+import FarinaYulia from "@/public/images/staff/farina_yulia.webp";
+import BersenevDenis from "@/public/images/staff/bersenev_denis.webp";
+import SalihovaAlphia from "@/public/images/staff/salihova_alphia.webp";
+import PotkinMaksim from "@/public/images/staff/potkin_maksim.webp";
+import MakarovaLarisa from "@/public/images/staff/makarova_larisa.webp";
+import SodikovaShaphoat from "@/public/images/staff/sodikova_shaphoat.webp";
 
 const STAFF_ITEMS: IStaffItem[] = [
   {
@@ -23,31 +23,32 @@ const STAFF_ITEMS: IStaffItem[] = [
     imageSrc: BersenevDenis.src,
   },
   {
-    name: "Филипов Игорь Юрьевич",
-    post: "Психиатр",
+    name: "Салихова Альфия Фаритовна",
+    post: "Аллерголог-иммунолог",
     description:
-      "Стаж работы более 25 лет. В 2000 году окончил Уральскую государственную медицинскую академию, прошел интернатуру по специализации психиатрия",
-    imageSrc: FilipovIgor.src,
+      " окончила Оренбургский медицинский университет (2001), повышение квалификации в 2011 и 2016 гг., РМАНПО (2021)",
+    imageSrc: SalihovaAlphia.src,
   },
   {
     name: "Поткин Максим Евгеньевич",
     post: "Детский хирург-уролог, дежурный врач",
     description:
-      "Врач с 17-летним стажем, окончил Уральскую медакадемию (2007), интернатуру по детской хирургии, специализация по урологии (2014).",
+      "Врач с 17-летним стажем, окончил Уральскую медакадемию (2007), интернатуру по детской хирургии, специализация по урологии (2014)",
     imageSrc: PotkinMaksim.src,
   },
   {
-    name: "Попов Кирилл Сергеевич",
-    post: "Дерматолог, Педиатр, Дежурный врач",
-    description: "Окончил Уральскую государственную медицинскую академию",
-    imageSrc: PopovKirill.src,
+    name: "Макарова Лариса Анатольевна",
+    post: "Инфекционист",
+    description:
+      "Врач высшей категории, окончила ННГМА (1996) и интернатуру в КГМУ (1997). Стаж работы с детьми и взрослыми 28 лет",
+    imageSrc: MakarovaLarisa.src,
   },
   {
-    name: "Корчёмкина Лилия Владиковна",
-    post: "Врач педиатр",
+    name: "Содикова Шафоат Ашурбоевна",
+    post: "Терапевт, гинеколог, детский гинеколог",
     description:
-      "Врач с более чем 10-летним стажем. Окончила Уральский медицинский университет (2015). Работала врачом скорой помощи в Екатеринбурге (2015–2019), с 2019 года — заведующая отделением неотложной помощи в крупной больнице.",
-    imageSrc: KorchemkinaLilia.src,
+      "Окончила в 2022 году Башкирский государственный медицинский университет, факультет Лечебное дело",
+    imageSrc: SodikovaShaphoat.src,
   },
 ];
 

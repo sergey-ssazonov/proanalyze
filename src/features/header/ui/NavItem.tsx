@@ -10,7 +10,7 @@ const Navigation: FC<INavigationProps> = ({ className }) => (
   <ul className={`flex gap-6 ${className}`}>
     {HEADER_ITEMS.map((navEl, index) => (
       <li className="text-black hover:cursor-pointer hover:text-primaryBlue" key={index}>
-        <Link href={navEl.url}>{navEl.label}</Link>
+        <Link href={navEl.url}>{navEl.label} </Link>
       </li>
     ))}
   </ul>

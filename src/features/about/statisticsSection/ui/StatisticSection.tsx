@@ -1,7 +1,7 @@
 import { Col, Flex, Row } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
-import StaffImage from "@/public/images/about/staff-image.jpg";
+import StaffImage from "@/public/images/about/staff-image.webp";
 import { ButtonLink } from "@/src/shared/components/buttons/buttonLink";
 import STATISTIC_ITEMS from "../data/Statistic.data";
 
@@ -15,7 +15,7 @@ const StatisticSection: FC = () => {
               src={StaffImage.src}
               fill
               alt="Группа медицинских специалистов, позирующих в клинике. Они одеты в белые халаты или медицинскую форму. В группе четыре женщины и трое мужчин, один человек сидит."
-              className="rounded-3xl object-cover"
+              className="rounded-2xl object-cover"
               priority
               loading="eager"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -26,7 +26,7 @@ const StatisticSection: FC = () => {
           <Flex
             vertical
             justify="space-between"
-            className="w-full gap-14 rounded-3xl bg-white p-4 sm:p-11"
+            className="w-full gap-14 rounded-2xl bg-white p-4 sm:p-11"
           >
             <Flex vertical className="gap-5 sm:gap-8">
               <h2 className="text-3xl sm:text-5xl">Врачи клиники</h2>
@@ -44,7 +44,7 @@ const StatisticSection: FC = () => {
                 ))}
               </Row>
             </Flex>
-            <ButtonLink clasName="w-full sm:w-56" href="https://proanalizy.ru/">
+            <ButtonLink className="w-full sm:w-56" href="https://proanalizy.ru/">
               Выберите врача
             </ButtonLink>
           </Flex>
