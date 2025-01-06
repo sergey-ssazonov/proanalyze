@@ -12,7 +12,7 @@ const LandingPage: FC = () => {
       <PersonalizedSection />
       <CatalogSection />
       <FaqSection />
-      <ReviewSection/>
+      <ReviewSection />
     </div>
   );
 };

@@ -22,7 +22,7 @@ export default {
         115: "460px",
         134: "532px",
         100: "400px",
-        124: "496px"
+        124: "496px",
       },
       width: {
         130: "520px",
@@ -36,7 +36,6 @@ export default {
         xxxs: "6px",
         xxs: "9px",
       },
-      
     },
   },
   plugins: [],

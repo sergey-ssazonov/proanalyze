@@ -26,7 +26,7 @@ const ProductCard: FC<ICardProductProps> = ({ imageSrc: imageSrc, toUrl, type, t
           <span className="text-xs font-semibold sm:text-2xl">{price}₽</span>
         </Flex>
         <Flex justify="space-between" align="center">
-          <h3 className="text-left text-xxs sm:text-lg ">{title}</h3>
+          <h3 className="text-left text-xxs sm:text-lg">{title}</h3>
           <BuyButton />
         </Flex>
       </div>

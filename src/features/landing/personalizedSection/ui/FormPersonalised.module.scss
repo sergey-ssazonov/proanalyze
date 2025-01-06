@@ -20,7 +20,7 @@
   --borderColor: #cbd5e1;
   // Цвет прозрачного фона
   --transparentColor: rgba(0, 0, 0, 0);
-  
+
   color: var(--textColor);
   width: 100%;
   position: relative;
@@ -82,7 +82,9 @@
   overflow: hidden;
   padding: 0.5em 0.6em; // Внутренние отступы для элементов
   border-bottom: 1px solid #d9d9d9; // Граница между элементами
-  transition: background-color 50ms ease-out, color 50ms ease-out; // Плавные переходы
+  transition:
+    background-color 50ms ease-out,
+    color 50ms ease-out; // Плавные переходы
 
   &:only-child {
     border-radius: 8px !important;

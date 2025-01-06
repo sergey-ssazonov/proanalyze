@@ -17,14 +17,14 @@ const LinkButton: FC<ILinkButtonProps> = ({ toUrl }) => {
 
   return (
     <ConfigProvider theme={secondaryThemeAntd}>
-    <span className="absolute right-2 top-2 z-10 sm:right-4 sm:top-4">
-      <Button
-        icon={<ArrowRightOutlined style={{ transform: "rotate(-45deg)" }} />}
-        shape="circle"
-        onClick={() => router.push(toUrl)}
-        size={`${width && width < 640 ? "small" : "middle"}`}
-      />
-    </span>
+      <span className="absolute right-2 top-2 z-10 sm:right-4 sm:top-4">
+        <Button
+          icon={<ArrowRightOutlined style={{ transform: "rotate(-45deg)" }} />}
+          shape="circle"
+          onClick={() => router.push(toUrl)}
+          size={`${width && width < 640 ? "small" : "middle"}`}
+        />
+      </span>
     </ConfigProvider>
   );
 };

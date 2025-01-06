@@ -1,1 +1,1 @@
-export { default as ReviewSection } from './ui/ReviewSection'
+export { default as ReviewSection } from "./ui/ReviewSection";

@@ -50,7 +50,6 @@ export const themeAntd: ThemeConfig = {
       // headerPadding: 10,
       borderRadius: 25,
     },
-   
   },
 };
 
