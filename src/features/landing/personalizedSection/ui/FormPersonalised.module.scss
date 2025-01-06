@@ -1,0 +1,126 @@
+.form__wrap {
+  max-width: 350px;
+
+  // Подстройка ширины под маленькие экраны
+  @media (max-width: 350px) {
+    width: 98%;
+  }
+}
+
+.RefineWrapper {
+  // Цвет границы для альтернативных элементов
+  --borderAltColor: #e2e8f0;
+  // Основной акцентный цвет
+  --accentColor: #ec4899;
+  // Альтернативный акцентный цвет
+  --accentAltColor: #fbcfe8;
+  // Основной цвет текста
+  --textColor: #475569;
+  // Цвет границы
+  --borderColor: #cbd5e1;
+  // Цвет прозрачного фона
+  --transparentColor: rgba(0, 0, 0, 0);
+  
+  color: var(--textColor);
+  width: 100%;
+  position: relative;
+}
+
+.RefineInput {
+  height: 46px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #fff; // Цвет границы, соответствующий `colorBorder`
+  border-radius: 16px; // Радиус границы `borderRadiusLG`
+  padding-left: 11px; // Внутренний отступ `paddingLG`
+  color: rgba(0, 0, 0, 0.88); // Цвет текста
+  font-size: 16px; // Размер текста `fontSizeLG`
+  outline: none;
+  background-color: #f6f6f6; // Цвет фона `colorBgContainer`
+  transition: all 0.2s;
+
+  &::placeholder {
+    text-overflow: ellipsis;
+    color: #bfbfbf; // Цвет текста placeholder
+  }
+
+  &:hover {
+    border: 1.2px solid #4096ff; // Граница при наведении
+  }
+
+  &:focus {
+    border: 1.2px solid #1677ff; // Граница при фокусе
+    box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1); // Тень при фокусе
+  }
+
+  // Для отключённого состояния (если понадобится)
+  &:disabled {
+    background-color: #f0f0f0;
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.RefineDropdown {
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  animation: SlideIn 200ms ease-out;
+  margin-top: 5px;
+  position: absolute;
+  z-index: 999;
+  border-radius: 10px; // Радиус границы выпадающего списка
+  border: 1.2px solid #d9d9d9; // Граница выпадающего списка
+  background-color: #ffffff; // Фон выпадающего списка
+}
+
+.RefineSuggestion {
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: var(--transparentColor); // Убирает подсветку при тапе
+  overflow: hidden;
+  padding: 0.5em 0.6em; // Внутренние отступы для элементов
+  border-bottom: 1px solid #d9d9d9; // Граница между элементами
+  transition: background-color 50ms ease-out, color 50ms ease-out; // Плавные переходы
+
+  &:only-child {
+    border-radius: 8px !important;
+  }
+
+  &:first-of-type {
+    border-radius: 8px 8px 0 0;
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+    border-radius: 0 0 8px 8px;
+  }
+
+  &[data-active-email="true"] {
+    background-color: #1677ff; // Фон активного элемента
+    color: white; // Цвет текста активного элемента
+    outline: none;
+  }
+}
+
+.RefineUsername {
+  font-weight: 400; // Вес шрифта для имени пользователя
+  padding-right: 0.1em;
+}
+
+.RefineDomain {
+  font-weight: 700; // Вес шрифта для домена
+}
+
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); // Начальное положение (анимация появления)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px); // Конечное положение (анимация появления)
+  }
+}

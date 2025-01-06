@@ -8,6 +8,7 @@ export default {
         primaryRed: "#FF4A36",
         primaryBlue: "#2976EC",
         primaryGray: "#F5F5F5",
+        blueBg: "#EEF1F6",
         black: "#242424",
         grayText: "#474747",
         grayText2: "#545353",
@@ -21,6 +22,7 @@ export default {
         115: "460px",
         134: "532px",
         100: "400px",
+        124: "496px"
       },
       width: {
         130: "520px",

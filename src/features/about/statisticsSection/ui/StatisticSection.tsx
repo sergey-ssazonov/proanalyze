@@ -1,7 +1,7 @@
 import { Col, Flex, Row } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
-import StaffImage from "@/public/images/about/staff-image.jpg";
+import StaffImage from "@/public/images/about/staff-image.webp";
 import { ButtonLink } from "@/src/shared/components/buttons/buttonLink";
 import STATISTIC_ITEMS from "../data/Statistic.data";
 
@@ -44,7 +44,7 @@ const StatisticSection: FC = () => {
                 ))}
               </Row>
             </Flex>
-            <ButtonLink clasName="w-full sm:w-56" href="https://proanalizy.ru/">
+            <ButtonLink className="w-full sm:w-56" href="https://proanalizy.ru/">
               Выберите врача
             </ButtonLink>
           </Flex>

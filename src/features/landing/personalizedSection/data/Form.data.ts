@@ -1,6 +1,6 @@
 interface ISelectOption {
   label: string;
-  value: string;
+  value: string | boolean;
 }
 
 export const GENDER_OPTIONS: ISelectOption[] = [
@@ -8,12 +8,18 @@ export const GENDER_OPTIONS: ISelectOption[] = [
   { label: "Женский", value: "female" },
 ];
 
-export const MENSES_OPTIONS: ISelectOption[] = [
-  { label: "вариант1", value: "variant1" },
-  { label: "вариант2", value: "variant2" },
-  { label: "вариант3", value: "variant3" },
-  { label: "вариант4", value: "variant4" },
-  { label: "вариант5", value: "variant5" },
+export const SYMPTOMS_OPTIONS: ISelectOption[] = [
+  { label: "Да", value: true },
+  { label: "Нет", value: false },
+];
+
+export const BASE_EMAIL_LIST: string[] = [
+  "mail.ru",
+  "yandex.ru",
+  "gmail.com",
+  "list.ru",
+  "rambler.ru",
+  "icloud.com",
 ];
 
 export const AGE_OPTIONS: ISelectOption[] = [

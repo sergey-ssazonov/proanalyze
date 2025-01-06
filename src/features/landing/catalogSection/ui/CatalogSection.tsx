@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import ProductCard from "./ProductCard";
 import { IProduct } from "@/src/features/landing/catalogSection/interfaces/product.interface";
 
-import Product1Image from "@/public/images/landing/product1-image.png";
+import Product1Image from "@/public/images/landing/product1-image.webp";
 import { TitleSection } from "@/src/shared/components/titleSection";
 
 const mockProduct: IProduct = {
@@ -16,7 +16,7 @@ const mockProduct: IProduct = {
 
 const CatalogSection: FC = () => {
   return (
-    <section className="w-full bg-transparent">
+    <section className="w-full bg-transparent" id="catalog_section">
       <TitleSection
         title="Готовые перечни анализов"
         subTitle="Узнайте, какие именно анализы помогут вам"

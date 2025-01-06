@@ -2,24 +2,29 @@ import { Form } from "antd";
 import { useState } from "react";
 import { IPersonalizedData } from "./FormPersonalized";
 import { omit } from "@/src/shared/utils/omit";
+import { CheckboxChangeEvent } from "antd/es/checkbox";
 
 const steps: string[] = [
   "Укажите пол",
   "Укажите возраст",
   "Выберите врача",
-  "Укажите последний день менструации",
+  "Есть ли жалобы / симптомы?",
+  "Напишите жалобы / симптомы",
 ];
 
 export const usePersonalizedModel = () => {
   const [form] = Form.useForm();
-  const [isFemale, setIsFemale] = useState<boolean>(false);
+  const [haveSymptoms, setHaveSymptoms] = useState<boolean>(false);
+  const [isEmailVisible, setEmailVisible] = useState<boolean>(true);
   const [formProgress, setFormProgress] = useState<number>(5);
   const [nextStep, setNextStep] = useState<string>(steps[0]);
   const [isFormEmpty, setIsFormEmpty] = useState<boolean>(true);
 
   const calculateFormPropgress = (values: IPersonalizedData, steps: string[]): number => {
     const totalSteps = steps.length;
-    const filledSteps = Object.values(values).filter((value) => value).length;
+    const filledSteps = Object.values(values).filter(
+      (value) => value !== undefined && value !== ""
+    ).length;
 
     return Math.max(5, Math.round((filledSteps / totalSteps) * 100));
   };
@@ -33,11 +38,20 @@ export const usePersonalizedModel = () => {
   const handleResetForm = () => {
     form.resetFields();
     setIsFormEmpty(true);
+    setFormProgress(5);
   };
 
   const handleValuesChange = (changedValues: IPersonalizedData) => {
     const values: IPersonalizedData = form.getFieldsValue();
-    const genderValue = values.gender;
+
+    if (values.haveSymptoms) {
+      setHaveSymptoms(true);
+      setFormProgress(calculateFormPropgress(values, steps));
+    } else {
+      setHaveSymptoms(false);
+
+      setFormProgress(calculateFormPropgress(omit(values, "symptoms"), steps.slice(0, 4)));
+    }
 
     const isValueEmpty = !Object.values(values).some(
       (value) => value !== undefined && value !== null && value !== ""
@@ -45,27 +59,24 @@ export const usePersonalizedModel = () => {
 
     setIsFormEmpty(isValueEmpty);
 
-    if (changedValues.gender === "male") {
-      form.setFieldValue("menses_day", undefined);
+    if (changedValues.haveSymptoms === false) {
+      form.setFieldValue("symptoms", undefined);
     }
 
-    if (genderValue === "female") {
-      setIsFemale(true);
-      setFormProgress(calculateFormPropgress(values, steps));
-    } else {
-      setIsFemale(false);
-      setFormProgress(calculateFormPropgress(omit(values, "menses_day"), steps.slice(0, 3)));
-    }
     setNextStep(calculateNextStep(values));
   };
 
+  const handleEmailCheckboxChange = (e: CheckboxChangeEvent) => setEmailVisible(e.target.checked);
+
   return {
     form,
-    isFemale,
+    haveSymptoms,
     handleValuesChange,
     formProgress,
     nextStep,
     handleResetForm,
     isFormEmpty,
+    isEmailVisible,
+    handleEmailCheckboxChange,
   };
 };

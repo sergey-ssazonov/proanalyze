@@ -5,7 +5,7 @@ import { FOOTER_ITEMS_CLIENTS, FOOTER_ITEMS_DOCS, FOOTER_ITEMS_DOCTORS } from ".
 import Link from "next/link";
 import { IFooterItem } from "../model/Footer";
 import Image from "next/image";
-import AlfaBankLogo from "@/public/images/landing/alfa-bank-logo.png";
+import AlfaBankLogo from "@/public/images/landing/alfa-bank-logo.webp";
 
 interface IOneSectionNavProps {
   labelSection: string;

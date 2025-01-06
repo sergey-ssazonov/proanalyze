@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import FaqImage from "@/public/images/landing/faq-image.png";
+import FaqImage from "@/public/images/landing/faq-image.webp";
 import CollapseFaq from "./CollapseFaq";
 import { TitleSection } from "@/src/shared/components/titleSection";
 

@@ -7,10 +7,10 @@ import React, { FC } from "react";
 interface IButtonLinkProps {
   href: string;
   children: string;
-  clasName?: string;
+  className?: string;
 }
 
-const ButtonLink: FC<IButtonLinkProps> = ({ href, children, clasName }) => {
+const ButtonLink: FC<IButtonLinkProps> = ({ href, children, className: clasName }) => {
   const router = useRouter();
   return (
     <Button

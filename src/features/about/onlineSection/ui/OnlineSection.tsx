@@ -2,7 +2,7 @@ import { ButtonLink } from "@/src/shared/components/buttons/buttonLink";
 import { Col, Flex, Row } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
-import OnlineImage from "@/public/images/about/online-image.jpg";
+import OnlineImage from "@/public/images/about/online-image.webp";
 
 const OnlineSection: FC = () => {
   return (
@@ -22,8 +22,8 @@ const OnlineSection: FC = () => {
                 рекомендации по вашему здоровью. Удобно, быстро и безопасно.
               </p>
             </Flex>
-            <ButtonLink clasName="w-full sm:w-56" href="https://proanalizy.ru/">
-              Получить
+            <ButtonLink className="w-full sm:w-56" href="https://proanalizy.ru/">
+              Задать вопрос врачу
             </ButtonLink>
           </Flex>
         </Col>

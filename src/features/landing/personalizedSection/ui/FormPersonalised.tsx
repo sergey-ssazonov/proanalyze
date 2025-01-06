@@ -1,20 +1,36 @@
 "use client";
 
-import { Button, Col, Flex, Form, Input, Progress, Row, Select } from "antd";
+import { Button, Checkbox, Col, Flex, Form, Input, Progress, Row, Select } from "antd";
 import React from "react";
-import { AGE_OPTIONS, GENDER_OPTIONS, MENSES_OPTIONS } from "../data/Form.data";
+import { AGE_OPTIONS, BASE_EMAIL_LIST, GENDER_OPTIONS, SYMPTOMS_OPTIONS } from "../data/Form.data";
 import { usePersonalizedModel } from "../model/PersonalizedModel";
+
+import styles from "./FormPersonalised.module.scss";
+
+import { Email as EmailAutocomplete, domains } from "@smastrom/react-email-autocomplete";
+
+import type { ClassNames } from "@smastrom/react-email-autocomplete";
 
 const FormPersonalized = () => {
   const {
     form,
-    isFemale,
+    haveSymptoms,
     handleValuesChange,
     nextStep,
     formProgress,
     handleResetForm,
     isFormEmpty,
+    isEmailVisible,
+    handleEmailCheckboxChange,
   } = usePersonalizedModel();
+
+  const classeNames: ClassNames = {
+    wrapper: styles.RefineWrapper,
+    dropdown: styles.RefineDropdown,
+    input: styles.RefineInput,
+    suggestion: styles.RefineSuggestion,
+    domain: styles.RefineDomain,
+  };
 
   return (
     <Form
@@ -114,29 +130,83 @@ const FormPersonalized = () => {
             </Form.Item>
           </Col>
 
-          {isFemale && (
-            <Col xs={24} lg={12}>
+          <Col xs={24} lg={12}>
+            <Form.Item
+              name="haveSymptoms"
+              rules={[{ required: true, message: "Укажите ваш возраст" }]}
+              style={{
+                marginBottom: "0.5rem",
+              }}
+            >
+              <Select
+                size="large"
+                virtual={false}
+                placeholder="Есть ли жалобы / симптомы?"
+                options={SYMPTOMS_OPTIONS}
+                dropdownStyle={{
+                  borderRadius: "8px",
+                }}
+                className="w-full"
+              />
+            </Form.Item>
+          </Col>
+
+          {haveSymptoms && (
+            <Col xs={24}>
               <Form.Item
-                name="menses_day"
+                name="symptoms"
                 rules={[
                   {
                     required: true,
-                    message: "Укажите последний день менструации",
+                    message: "Напишите жалобы / симптомы",
                   },
                 ]}
                 style={{
                   marginBottom: "0.5rem",
                 }}
               >
-                <Select
+                <Input.TextArea
+                  rows={3}
                   size="large"
-                  virtual={false}
-                  placeholder="Последний день менструации"
-                  options={MENSES_OPTIONS}
-                  dropdownStyle={{
-                    borderRadius: "8px",
-                  }}
+                  placeholder="Напишите жалобы / симптомы"
                   className="w-full"
+                  style={{
+                    resize: "none",
+                  }}
+                />
+              </Form.Item>
+            </Col>
+          )}
+
+          <Col xs={24}>
+            <Checkbox
+              defaultChecked
+              value={isEmailVisible}
+              onChange={handleEmailCheckboxChange}
+              // disabled={loader}
+            >
+              Отправить расшифровкy и чек на E-mail
+            </Checkbox>
+          </Col>
+
+          {isEmailVisible && (
+            <Col xs={12}>
+              <Form.Item
+                name="email"
+                style={{
+                  marginBottom: "0.5rem",
+                }}
+              >
+                <EmailAutocomplete
+                  // disabled={loader}
+                  id="email-autocomplete"
+                  placeholder="Адрес электронной почты"
+                  classNames={classeNames}
+                  baseList={BASE_EMAIL_LIST}
+                  refineList={domains}
+                  onChange={(newValue: string) => form.setFieldValue("email", newValue)}
+                  value={form.getFieldValue("email")}
+                  style={{ fontSize: "16px" }}
                 />
               </Form.Item>
             </Col>
@@ -144,7 +214,7 @@ const FormPersonalized = () => {
         </Row>
         <Form.Item shouldUpdate noStyle>
           <Button
-            className="mb-4 mt-10 w-full sm:mt-14 sm:w-fit"
+            className="mb-3 mt-10 w-full sm:mt-14 sm:w-fit"
             type="primary"
             size="large"
             shape="round"

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import DecryptionImage from "@/public/images/about/decryption-image.png";
+import DecryptionImage from "@/public/images/about/decryption-image.webp";
 import { ButtonLink } from "@/src/shared/components/buttons/buttonLink";
 import { Col, Flex, Row } from "antd";
 import Image from "next/image";
@@ -21,7 +21,7 @@ const DecryptionSection: FC = () => {
                 показателей и подскажем, что делать дальше для поддержания здоровья.
               </p>
             </Flex>
-            <ButtonLink clasName="w-full sm:w-56" href="https://proanalizy.ru/">
+            <ButtonLink className="w-full sm:w-56" href="https://proanalizy.ru/">
               Расшифровать
             </ButtonLink>
           </Flex>

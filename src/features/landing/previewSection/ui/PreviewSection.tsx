@@ -1,13 +1,14 @@
-import { Button, Flex } from "antd";
+import { Flex } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
-import PreviewImage from "@/public/images/landing/preview-image.png";
+import PreviewImage from "@/public/images/landing/preview-image.webp";
 import FlaskIcon from "@/public/icons/flask-icon-sm.svg";
 import HeardIcon from "@/public/icons/heard-icon-sm.svg";
 import TabletIcon from "@/public/icons/tablet-icon-sm.svg";
 import YogaIcon from "@/public/icons/yoga-icon-sm.svg";
 import InfoCard from "./InfoCard";
 import { TagSpan } from "@/src/shared/components/tagSpan";
+import { ButtonLink } from "@/src/shared/components/buttons/buttonLink";
 
 const PreviewSection: FC = () => {
   return (
@@ -19,9 +20,9 @@ const PreviewSection: FC = () => {
           <h3 className="font-normal sm:text-2xl sm:font-medium">
             Сервис по подготовке перечня необходимых анализов
           </h3>
-          <Button className="w-full sm:max-w-56" type="primary" shape="round" size="large">
+          <ButtonLink href="#catalog_section" className="w-full sm:max-w-56">
             Список анализов
-          </Button>
+          </ButtonLink>
         </div>
         <div className="grid grid-cols-6 gap-2">
           <InfoCard

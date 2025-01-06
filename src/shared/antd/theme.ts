@@ -13,17 +13,22 @@ export const themeAntd: ThemeConfig = {
 
   components: {
     Input: {
-      colorBgContainer: "#F0F0F0",
-      borderRadiusLG: 20,
-      paddingBlockLG: 16,
-      paddingInlineLG: 16,
+      colorBgContainer: "#F6F6F6",
+      colorBorder: "#fff",
+      borderRadiusLG: 16,
+      fontSizeLG: 16,
+      paddingLG: 16,
+
+      // paddingBlockLG: 16,
+      // paddingInlineLG: 16,
       // fontSizeLG: 14,
     },
     Select: {
       colorBgContainer: "#F6F6F6",
-      colorBorder: "transperent",
-      borderRadiusLG: 25,
+      colorBorder: "#fff",
+      borderRadiusLG: 16,
       fontSizeLG: 16,
+      hoverBorderColor: "#2976EC",
 
       paddingLG: 16,
       // paddingBlockLG: 16,
@@ -45,6 +50,7 @@ export const themeAntd: ThemeConfig = {
       // headerPadding: 10,
       borderRadius: 25,
     },
+   
   },
 };
 
