@@ -9,11 +9,12 @@ export const themeAntd: ThemeConfig = {
     controlHeightLG: 46,
     fontSize: 16,
     // screenLG: 1024,
+    borderRadius: 16,
   },
 
   components: {
     Input: {
-      colorBgContainer: "#F6F6F6",
+      colorBgContainer: "#fff",
       colorBorder: "#fff",
       borderRadiusLG: 16,
       fontSizeLG: 16,
@@ -24,7 +25,7 @@ export const themeAntd: ThemeConfig = {
       // fontSizeLG: 14,
     },
     Select: {
-      colorBgContainer: "#F6F6F6",
+      colorBgContainer: "#fff",
       colorBorder: "#fff",
       borderRadiusLG: 16,
       fontSizeLG: 16,
@@ -49,6 +50,9 @@ export const themeAntd: ThemeConfig = {
     Collapse: {
       // headerPadding: 10,
       borderRadius: 25,
+    },
+    Upload: {
+      lineWidth: 1.5,
     },
   },
 };

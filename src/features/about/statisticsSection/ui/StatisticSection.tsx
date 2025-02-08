@@ -9,27 +9,22 @@ const StatisticSection: FC = () => {
   return (
     <section>
       <Row gutter={[20, 15]}>
-        <Col xs={24} lg={14} className="order-2 sm:order-1">
+        <Col xs={24} lg={14} className="order-2 md:order-1">
           <div className="relative min-h-64 w-full md:h-full">
             <Image
               src={StaffImage.src}
               fill
               alt="Группа медицинских специалистов, позирующих в клинике. Они одеты в белые халаты или медицинскую форму. В группе четыре женщины и трое мужчин, один человек сидит."
               className="rounded-2xl object-cover"
-              priority
-              loading="eager"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 67vw"
             />
           </div>
         </Col>
-        <Col xs={24} lg={10} className="sm:oreder-2 order-1">
-          <Flex
-            vertical
-            justify="space-between"
-            className="w-full gap-14 rounded-2xl bg-white p-4 sm:p-11"
-          >
-            <Flex vertical className="gap-5 sm:gap-8">
-              <h2 className="text-3xl sm:text-5xl">Врачи клиники</h2>
+        <Col xs={24} lg={10} className="md:oreder-2 order-1">
+          <div className="flex w-full flex-col justify-between gap-14 rounded-2xl bg-white p-4 sm:p-11">
+            <div className="flex flex-col gap-5 sm:gap-8">
+              <h2 className="text-2xl sm:text-4xl">Врачи клиники</h2>
 
               <Row gutter={[0, { xs: 25, sm: 25, md: 25, lg: 36 }]}>
                 {STATISTIC_ITEMS.map((el, index) => (
@@ -43,11 +38,15 @@ const StatisticSection: FC = () => {
                   </Col>
                 ))}
               </Row>
-            </Flex>
-            <ButtonLink className="w-full sm:w-56" href="https://proanalizy.ru/">
+            </div>
+            <ButtonLink
+              className="w-full sm:w-56"
+              href="https://imedsvetliy.ru/podrobno"
+              target="_blank"
+            >
               Выберите врача
             </ButtonLink>
-          </Flex>
+          </div>
         </Col>
       </Row>
     </section>

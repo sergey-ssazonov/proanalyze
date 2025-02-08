@@ -1,6 +1,7 @@
+import INavigationItem from "@/src/shared/types/navigation";
 import { IFooterItem } from "../model/Footer";
 
-const FOOTER_ITEMS_CLIENTS: IFooterItem[] = [
+const FOOTER_ITEMS_CLIENTS: INavigationItem[] = [
   { label: "Задать вопрос врачу", url: "" },
   { label: "Консультации", url: "" },
   { label: "О нас", url: "" },
@@ -10,18 +11,28 @@ const FOOTER_ITEMS_CLIENTS: IFooterItem[] = [
   { label: "Отзывы", url: "" },
 ];
 
-const FOOTER_ITEMS_DOCTORS: IFooterItem[] = [
+const FOOTER_ITEMS_DOCTORS: INavigationItem[] = [
   { label: "Стать консультантом", url: "" },
   { label: "Помощь", url: "" },
   { label: "Заполнение профиля", url: "" },
   { label: "Наши врачи", url: "" },
 ];
 
+const createFooterItem = (
+  label: string,
+  url: string,
+  target: string = "_blank",
+  rel: string = "noopener noreferrer nofollow"
+): IFooterItem => ({
+  label,
+  url,
+  target,
+  rel,
+});
+
 const FOOTER_ITEMS_DOCS: IFooterItem[] = [
-  { label: "Соглашение для пользователей", url: "" },
-  { label: "Соглашение для врачей", url: "" },
-  { label: "Обработка персональных данных", url: "" },
-  { label: "Редакционная политика", url: "" },
+  createFooterItem("Соглашение для пользователей", "/agreement"),
+  createFooterItem("Обработка персональных данных", "/policy"),
 ];
 
 export { FOOTER_ITEMS_CLIENTS, FOOTER_ITEMS_DOCTORS, FOOTER_ITEMS_DOCS };

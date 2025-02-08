@@ -15,7 +15,7 @@ const DecryptionSection: FC = () => {
             className="w-full gap-11 rounded-2xl bg-white p-4 sm:p-11"
           >
             <Flex vertical className="gap-5 sm:gap-8">
-              <h2 className="text-3xl sm:text-5xl">Расшифровка анализов</h2>
+              <h2 className="text-2xl sm:text-4xl">Расшифровка анализов</h2>
               <p className="w-11/12 font-normal leading-6 sm:text-2xl">
                 Получите профессиональную расшифровку результатов анализов. Мы объясним значения
                 показателей и подскажем, что делать дальше для поддержания здоровья.

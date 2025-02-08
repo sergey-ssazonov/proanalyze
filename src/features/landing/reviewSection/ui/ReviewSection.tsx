@@ -26,7 +26,7 @@ const ReviewSection: FC = () => {
   };
 
   return (
-    <section className="h-auto">
+    <section id="review_section" className="h-auto">
       <Flex gap={10} className="mb-6" justify="space-between">
         <h2 className="text-2xl sm:text-4xl">Отзывы пользователей сайта</h2>
         <Flex gap={10}>

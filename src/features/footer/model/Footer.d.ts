@@ -1,6 +1,6 @@
-interface IFooterItem {
-  label: string;
-  url: string;
-}
+import INavigationItem from "@/src/shared/types/navigation";
 
-export { IFooterItem };
+export interface IFooterItem extends INavigationItem {
+  target?: string;
+  rel?: string;
+}

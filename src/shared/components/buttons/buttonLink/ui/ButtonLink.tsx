@@ -1,28 +1,24 @@
 "use client";
 
-import { Button } from "antd";
+import { Button, ButtonProps } from "antd";
 import { useRouter } from "next/navigation";
 import React, { FC } from "react";
 
-interface IButtonLinkProps {
+type TTarget = "_blank" | "_self";
+
+interface IButtonLinkProps extends ButtonProps {
   href: string;
-  children: string;
-  className?: string;
+  target?: TTarget;
 }
 
-const ButtonLink: FC<IButtonLinkProps> = ({ href, children, className: clasName }) => {
+const ButtonLink: FC<IButtonLinkProps> = ({ href, target = "_self", ...props }) => {
   const router = useRouter();
-  return (
-    <Button
-      size="large"
-      shape="round"
-      type="primary"
-      className={clasName}
-      onClick={() => router.push(href)}
-    >
-      {children}
-    </Button>
-  );
+
+  const handleClick = () => {
+    if (target === "_blank") window.open(href, "_blank");
+    else router.push(href);
+  };
+  return <Button size="large" shape="round" type="primary" onClick={handleClick} {...props} />;
 };
 
 export default ButtonLink;

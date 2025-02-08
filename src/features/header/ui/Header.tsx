@@ -1,13 +1,14 @@
 "use client";
 
 import { Logo } from "@/src/shared/components/logo";
-import { CloseOutlined, MenuOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import { Button, Flex } from "antd";
 
 import React, { FC, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import Navigation from "./NavItem";
+import { NAVIGATION_ITEMS_USER } from "../data/Header.data";
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -36,10 +37,9 @@ const Header: FC = () => {
       <header className="relative z-20 mb-4 flex h-16 w-full items-center justify-between rounded-2xl bg-white px-4 sm:px-9">
         <Logo className="text-2xl" />
         <nav className="hidden lg:block">
-          <Navigation />
+          <Navigation navItems={NAVIGATION_ITEMS_USER} />
         </nav>
         <Flex gap={10}>
-          <Button shape="circle" className="hidden lg:block" icon={<ShoppingCartOutlined />} />
           <span className="lg:hidden">
             <Button
               shape="circle"
@@ -60,7 +60,7 @@ const Header: FC = () => {
             isMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          <Navigation className="flex-col" />
+          <Navigation className="flex-col" navItems={NAVIGATION_ITEMS_USER} />
         </nav>
       </div>
     </>

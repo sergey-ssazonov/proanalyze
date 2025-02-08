@@ -31,14 +31,14 @@ const StaffSection: FC = () => {
 
         <Row gutter={[20, 20]}>
           {STAFF_ITEMS.map((person, index) => (
-            <Col key={index} xs={24} sm={12} lg={8}>
+            <Col key={index} xs={24} sm={12} lg={8} xl={6}>
               <PersonCard {...person} />
             </Col>
           ))}
         </Row>
       </section>
       <section className="block h-auto sm:hidden">
-        <Flex gap={10} className="mb-6" justify="space-between">
+        <div className="mb-6 flex justify-between">
           <h2 className="text-2xl sm:text-4xl">Коллектив</h2>
           {/* <TitleSection title="Коллектив" /> */}
 
@@ -58,7 +58,7 @@ const StaffSection: FC = () => {
               onClick={() => swiperRef.current?.slideNext()}
             />
           </Flex>
-        </Flex>
+        </div>
         <Swiper
           onSwiper={(swiperInstance) => (swiperRef.current = swiperInstance)}
           onSlideChange={(swiper) => handleSlideChange(swiper)}
