@@ -2,25 +2,23 @@ import { Col, Row } from "antd";
 import Image from "next/image";
 import React, { FC } from "react";
 import ADVATAGES_DATA from "../data/Advatages.data";
-import OnlineImage from "@/public/images/about/online-image.webp";
+import AdvantagesImage from "@/public/images/about/advantages-image.webp";
 import { TitleSection } from "@/src/shared/components/titleSection";
 
 const AdvantagesSection: FC = () => {
   return (
     <section>
-      <TitleSection title="Сочетаем лучшие медицинские практики с инновациями" />
+      <TitleSection title="Сочетаем заботливые медицинские практики с инновациями" />
 
       <Row gutter={[20, 20]}>
         <Col lg={8} xs={24}>
           <div className="relative hidden min-h-64 w-full sm:block md:h-full">
             <Image
-              src={OnlineImage.src}
+              src={AdvantagesImage.src}
               fill
-              alt=""
-              className="rounded-2xl object-cover"
-              priority={true}
-              loading="eager"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="Сочетаем лучшие медицинские практики с инновациями"
+              className="rounded-2xl bg-[#EEF1F6] object-cover"
+              loading="lazy"
             />
           </div>
         </Col>

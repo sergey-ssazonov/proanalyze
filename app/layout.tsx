@@ -1,43 +1,38 @@
 import type { Metadata } from "next";
 import "@/src/shared/styles/globals.scss";
-import { Inter } from "next/font/google";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
-import ConfigProviderAntd from "@/src/shared/antd/config.provider";
-import { Layout } from "@/src/shared/components/layout";
-import { Providers } from "@/src/shared/providers/Providers";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+import { CommonLayout } from "@/src/shared/components/layouts/commonLayout";
+import TLayout from "@/src/shared/types/layout";
 
 export const metadata: Metadata = {
-  title: "Проанализы",
+  title: "Какие анализы сдать?",
   description:
     "Сервис по подготовке перечня необходимых анализов c быстрым подборо и рекомендациями",
+
   openGraph: {
-    title: "Проанализы",
+    title: "Какие анализы сдать?",
+    url: "https://xn-----6kcbab1advferbt2a3eta1nya.xn--p1ai",
     description:
       "Сервис по подготовке перечня необходимых анализов c быстрым подборо и рекомендациями",
+    images: [
+      {
+        url: "https://xn-----6kcbab1advferbt2a3eta1nya.xn--p1ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpreview-image.fc96c1aa.webp&w=3840&q=75",
+        width: 1024,
+        height: 1024,
+        alt: "Какие анализы сдать?",
+      },
+    ],
   },
-  viewport:
-    "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="ru" className={inter.className}>
-      <Providers>
-        <AntdRegistry>
-          <ConfigProviderAntd>
-            <Layout>{children}</Layout>
-          </ConfigProviderAntd>
-        </AntdRegistry>
-      </Providers>
-    </html>
-  );
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  minimumScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: "no",
+};
+
+export default function RootLayout({ children }: Readonly<TLayout>) {
+  return <CommonLayout>{children}</CommonLayout>;
 }

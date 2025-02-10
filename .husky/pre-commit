@@ -18,3 +18,5 @@ yarn build ||
     echo 'Build fail';
     false;
 )
+
+git add .

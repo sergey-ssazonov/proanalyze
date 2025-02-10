@@ -45,3 +45,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/proanalyze:latest  
             TAG=${{ github.sha }} docker-compose down
             TAG=${{ github.sha }} docker-compose up -d
+            docker system prune -a

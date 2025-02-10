@@ -1,9 +1,14 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-vercel ||
-(
-    echo 'Deploy fail';
-    false;
-)
+if [ "$BRANCH" = "prod" ]; then
+    vercel ||
+    (
+        echo 'Deploy fail';
+        false;
+    )
+else
+    echo "Skipping deploy, not in prod branch"
+fi

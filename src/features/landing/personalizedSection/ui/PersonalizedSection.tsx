@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import FormPersonalized from "./FormPersonalised";
+import FormPersonalized from "./FormPersonalized";
 import { TitleSection } from "@/src/shared/components/titleSection";
 
 const PersonalizedSection: FC = () => {

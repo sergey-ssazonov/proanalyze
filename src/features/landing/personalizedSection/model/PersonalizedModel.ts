@@ -1,82 +1,156 @@
-import { Form } from "antd";
-import { useState } from "react";
-import { IPersonalizedData } from "./FormPersonalized";
-import { omit } from "@/src/shared/utils/omit";
-import { CheckboxChangeEvent } from "antd/es/checkbox";
+import { FormInstance } from "antd";
+import { useEffect, useState } from "react";
 
-const steps: string[] = [
+import { omit } from "@/src/shared/utils/omit";
+import { FormNames, IPersonalizedFormData } from "./FormInterfaces";
+import { setFormErrors } from "./FormUtils";
+import { prepareFormData, usePersonalizedFormSubmit } from "../api/useFormSubmit";
+import { useRouter } from "next/navigation";
+
+const getSteps = (haveSymptoms?: boolean, isEmailRequire?: boolean): string[] => [
   "Укажите пол",
   "Укажите возраст",
-  "Выберите врача",
+  "К какому врачу планирует визит?",
   "Есть ли жалобы / симптомы?",
-  "Напишите жалобы / симптомы",
+  ...(haveSymptoms ? ["Напишите жалобы / симптомы"] : []),
+  ...(isEmailRequire ? ["Укажите E-mail для чека"] : []),
 ];
 
-export const usePersonalizedModel = () => {
-  const [form] = Form.useForm();
-  const [haveSymptoms, setHaveSymptoms] = useState<boolean>(false);
-  const [isEmailVisible, setEmailVisible] = useState<boolean>(true);
+export const usePersonalizedModel = (form: FormInstance) => {
+  const router = useRouter();
+
   const [formProgress, setFormProgress] = useState<number>(5);
-  const [nextStep, setNextStep] = useState<string>(steps[0]);
+  const [nextStep, setNextStep] = useState<string>(getSteps()[0]);
   const [isFormEmpty, setIsFormEmpty] = useState<boolean>(true);
 
-  const calculateFormPropgress = (values: IPersonalizedData, steps: string[]): number => {
-    const totalSteps = steps.length;
+  const { mutate: submitForm, isPending } = usePersonalizedFormSubmit(router);
+
+  //Func:функиция получения данных из sessionStorage
+  const loadFormDataFromSession = () => {
+    const dataFromStorage = sessionStorage.getItem("OrderData");
+    if (dataFromStorage) {
+      try {
+        const parsedData = JSON.parse(dataFromStorage);
+        return parsedData;
+      } catch (error) {
+        console.error("Error parsing data from sessionStorage", error);
+        return null;
+      }
+    }
+    return null;
+  };
+
+  // Func: вычисления прогресса заполнения формы
+  const calculateFormPropgress = (
+    values: Partial<IPersonalizedFormData>,
+    stepscount: number
+  ): number => {
     const filledSteps = Object.values(values).filter(
       (value) => value !== undefined && value !== ""
     ).length;
 
-    return Math.max(5, Math.round((filledSteps / totalSteps) * 100));
+    // console.log("values", values);
+    // console.log("stepscount", stepscount);
+    // console.log("filledSteps", filledSteps);
+
+    return Math.max(5, Math.round((filledSteps / stepscount) * 100));
   };
 
-  const calculateNextStep = (values: IPersonalizedData): string => {
-    const filledSteps = Object.values(values).filter((value) => value).length;
+  // Func: вычесления какой будет следущий шаг заполнения формы
+  const calculateNextStep = (values: IPersonalizedFormData): string => {
+    const dynamicSteps = getSteps(
+      values.haveSymptoms || false,
+      values.isEmailRequire || values.isEmailRequire === undefined
+    ); // Динамический список шагов
+    const stepFields: (keyof IPersonalizedFormData)[] = [
+      FormNames.gender,
+      FormNames.age,
+      FormNames.doctor,
+      FormNames.haveSymptoms,
+      ...(values.haveSymptoms ? [FormNames.symptoms] : []),
+      ...(values.isEmailRequire || values.isEmailRequire === undefined ? [FormNames.email] : []),
+    ];
 
-    return steps[filledSteps];
-  };
+    for (let i = 0; i < stepFields.length; i++) {
+      const field = stepFields[i];
 
-  const handleResetForm = () => {
-    form.resetFields();
-    setIsFormEmpty(true);
-    setFormProgress(5);
-  };
+      const isEmptyField =
+        values[field] === undefined || values[field] === null || values[field] === "";
 
-  const handleValuesChange = (changedValues: IPersonalizedData) => {
-    const values: IPersonalizedData = form.getFieldsValue();
-
-    if (values.haveSymptoms) {
-      setHaveSymptoms(true);
-      setFormProgress(calculateFormPropgress(values, steps));
-    } else {
-      setHaveSymptoms(false);
-
-      setFormProgress(calculateFormPropgress(omit(values, "symptoms"), steps.slice(0, 4)));
+      if (isEmptyField) {
+        return dynamicSteps[i];
+      }
     }
 
-    const isValueEmpty = !Object.values(values).some(
+    return "Форма заполнена";
+  };
+
+  // Func: отчистки формы
+  const handleResetForm = () => {
+    form.resetFields();
+
+    sessionStorage.removeItem("OrderData");
+    setIsFormEmpty(true);
+    setFormProgress(5);
+    setNextStep(getSteps()[0]);
+  };
+
+  // Func: изменения формы
+  const handleValuesFormChange = (
+    _: Partial<IPersonalizedFormData>,
+    allValues: IPersonalizedFormData
+  ) => {
+    const values: IPersonalizedFormData = form.getFieldsValue();
+
+    const isValueEmpty = !Object.values(omit(values, [FormNames.isEmailRequire])).some(
       (value) => value !== undefined && value !== null && value !== ""
+    );
+
+    const requireField = omit(values, [FormNames.isEmailRequire]);
+    setFormProgress(
+      calculateFormPropgress(
+        requireField,
+        getSteps(
+          allValues.haveSymptoms || false,
+          allValues.isEmailRequire || allValues.isEmailRequire === undefined
+        ).length
+      )
     );
 
     setIsFormEmpty(isValueEmpty);
 
-    if (changedValues.haveSymptoms === false) {
-      form.setFieldValue("symptoms", undefined);
-    }
-
     setNextStep(calculateNextStep(values));
   };
 
-  const handleEmailCheckboxChange = (e: CheckboxChangeEvent) => setEmailVisible(e.target.checked);
+  //Func: подготовка и отправка запроса на создание заказа
+  const handleSubmitForm = (values: IPersonalizedFormData) => {
+    if (values.hasOwnProperty("email") && (values.email === undefined || values.email === "")) {
+      setFormErrors(form, [{ name: "email", error: "Введите адрес электронной почты" }]);
+      return;
+    }
+
+    submitForm(prepareFormData(values));
+  };
+
+  useEffect(() => {
+    const storedData = loadFormDataFromSession();
+
+    if (storedData) {
+      // Устанавливаем значения в форму
+      form.setFieldsValue(storedData);
+
+      setIsFormEmpty(false);
+    }
+  }, [form]);
 
   return {
     form,
-    haveSymptoms,
-    handleValuesChange,
+    handleValuesFormChange,
     formProgress,
     nextStep,
     handleResetForm,
     isFormEmpty,
-    isEmailVisible,
-    handleEmailCheckboxChange,
+    isPending,
+    handleSubmitForm,
   };
 };
