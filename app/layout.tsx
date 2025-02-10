@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Какие анализы сдать?",
-    url: "https://proanalizy.ru",
+    url: "https://xn-----6kcbab1advferbt2a3eta1nya.xn--p1ai",
     description:
       "Сервис по подготовке перечня необходимых анализов c быстрым подборо и рекомендациями",
     images: [
