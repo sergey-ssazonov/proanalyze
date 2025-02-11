@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Flex, Form, Progress, Row } from "antd";
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { usePersonalizedModel } from "../model/PersonalizedModel";
 
 import Loading from "@/app/loading";
@@ -13,6 +13,10 @@ import DoctorField from "./formField/DoctorField";
 
 const FormPersonalized: FC = () => {
   const [form] = Form.useForm();
+
+  useEffect(() => {
+    console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+  }, []);
 
   const {
     handleValuesFormChange,
