@@ -24,7 +24,7 @@ const PaymentPage: FC<IPaymentPageProps> = ({ id }) => {
       }
 
       try {
-        const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+        const appUrl = window.location.origin;
         const checkout = new window.YooMoneyCheckoutWidget({
           confirmation_token: confirmationToken,
           return_url: `${appUrl}/decryption/${id}`,

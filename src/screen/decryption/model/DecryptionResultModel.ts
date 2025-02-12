@@ -47,7 +47,7 @@ export const useDecryptionResultModel = (id: string) => {
   const [messageApi, contextHolder] = message.useMessage();
 
   const handleClickCopy = async () => {
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+    const appUrl = window.location.origin;
     const linkToCopy = `${appUrl}/decryption/${id}`;
     console.log("copy link" + linkToCopy);
     await navigator.clipboard.writeText(linkToCopy);
@@ -71,7 +71,7 @@ export const useDecryptionResultModel = (id: string) => {
   };
 
   useEffect(() => {
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+    const appUrl = window.location.origin;
     const callbackLink = `${appUrl}/decryption/${id}`;
     Cookies.set(`returnDecryptionUrl`, callbackLink, {
       expires: 1,
