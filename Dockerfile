@@ -23,7 +23,6 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 # Копируем весь проект
 COPY . .
-COPY .env.production .env
 
 # Сборка приложения
 RUN \
