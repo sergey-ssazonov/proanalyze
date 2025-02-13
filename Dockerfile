@@ -39,6 +39,7 @@ WORKDIR /app
 
 # Устанавливаем переменную окружения для production
 ENV NODE_ENV=production
+ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
 
 # Создаем пользователя для запуска приложения
 RUN addgroup --system --gid 1001 nodejs
