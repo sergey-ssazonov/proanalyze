@@ -8,12 +8,13 @@ WORKDIR /app
 # Копируем lock-файлы для установки зависимостей
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./ 
 
+
 RUN \
-  if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable && pnpm install --frozen-lockfile; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
+if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
+elif [ -f package-lock.json ]; then npm ci; \
+elif [ -f pnpm-lock.yaml ]; then corepack enable && pnpm install --frozen-lockfile; \
+else echo "Lockfile not found." && exit 1; \
+fi
 
 # Сборка приложения
 FROM base AS builder
@@ -37,7 +38,7 @@ FROM base AS runner
 WORKDIR /app
 
 # Устанавливаем переменную окружения для production
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # Создаем пользователя для запуска приложения
 RUN addgroup --system --gid 1001 nodejs
@@ -58,6 +59,6 @@ USER nextjs
 EXPOSE 3000
 
 # Устанавливаем переменную PORT и запускаем сервер
-ENV PORT 3000
+ENV PORT=3000
 
 CMD ["node", "server.js"]
