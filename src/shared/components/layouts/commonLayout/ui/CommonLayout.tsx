@@ -6,6 +6,7 @@ import Script from "next/script";
 import TLayout from "@/src/shared/types/layout";
 import { Inter } from "next/font/google";
 import { MainLayout } from "../../mainLayout";
+import { PublicEnvScript } from "next-runtime-env";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,6 +16,9 @@ const inter = Inter({
 const CommonLayout: FC<Readonly<TLayout>> = ({ children }) => {
   return (
     <html lang="ru" className={inter.className}>
+      <head>
+        <PublicEnvScript />
+      </head>
       <Script id="metrika-counter" strategy="afterInteractive">
         {`
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

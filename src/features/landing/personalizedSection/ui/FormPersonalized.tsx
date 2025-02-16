@@ -10,12 +10,17 @@ import AgeSelect from "./formField/AgeSelect";
 import EmailField from "./formField/EmailField";
 import SymptomField from "./formField/SymptomField";
 import DoctorField from "./formField/DoctorField";
+import { env } from "next-runtime-env";
 
 const FormPersonalized: FC = () => {
   const [form] = Form.useForm();
 
   useEffect(() => {
     console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+
+    if (typeof window !== "undefined") {
+      console.log("API URL useRuntimeEnv:", env("NEXT_PUBLIC_API_URL"));
+    }
   }, []);
 
   const {
