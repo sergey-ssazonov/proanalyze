@@ -15,7 +15,7 @@ const FormPersonalized: FC = () => {
   const [form] = Form.useForm();
 
   useEffect(() => {
-    console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+    console.log("API URL:", process.env.API_URL);
   }, []);
 
   const {
