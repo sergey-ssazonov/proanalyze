@@ -39,8 +39,8 @@ WORKDIR /app
 
 # Устанавливаем переменную окружения для production
 ENV NODE_ENV=production
-ARG URL_API
-ENV URL_API=$URL_API
+ARG API_URL
+ENV API_URL=$API_URL
 
 # Создаем пользователя для запуска приложения
 RUN addgroup --system --gid 1001 nodejs

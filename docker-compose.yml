@@ -8,4 +8,4 @@ services:
     env_file:
       - .env
     environment:
-      - URL_API=${URL_API}
+      - API_URL=${API_URL}
