@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-head-element */
 import React, { FC } from "react";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import ConfigProviderAntd from "@/src/shared/antd/config.provider";

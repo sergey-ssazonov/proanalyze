@@ -39,7 +39,7 @@ WORKDIR /app
 
 # Устанавливаем переменную окружения для production
 ENV NODE_ENV=production
-ARG NEXT_PUBLIC_API_URL=https://proanalizy.ru/analysis_api
+ARG NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
 
 # Создаем пользователя для запуска приложения
